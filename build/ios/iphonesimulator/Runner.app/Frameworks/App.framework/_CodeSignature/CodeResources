@@ -10,15 +10,63 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		1Ckk1wZp1xfAqBJfhinTb4Azz6Q=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		lILml1/Dm8FIsisqu4EM3Kg929Q=
+		vKJkVIcw+LGHFnKJGwrQwCREv68=
 		</data>
 		<key>flutter_assets/NOTICES</key>
 		<data>
-		TqJyM53yQeCX33f5rXJP1UpgFm4=
+		KW2FEjlko32q7SklmL8YGjKUXKM=
+		</data>
+		<key>flutter_assets/assets/images/asba.txt</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>flutter_assets/assets/images/bitcoin-cash-bch.jpg</key>
+		<data>
+		GLI37V9ZZObdEcdmnQcn1nilnIk=
+		</data>
+		<key>flutter_assets/assets/images/bitcoin.png</key>
+		<data>
+		nr3gprXtTUVNz54YSDxDMHVgBOU=
+		</data>
+		<key>flutter_assets/assets/images/dogecoin-doge.png</key>
+		<data>
+		AlEOX132YlkbYtlp0d4VKOJKcEk=
+		</data>
+		<key>flutter_assets/assets/images/eth.png</key>
+		<data>
+		pS+A1KSHfPJ07GYC4TNC55Td6Sc=
+		</data>
+		<key>flutter_assets/assets/images/ltc.png</key>
+		<data>
+		Z2nY+V5hJEi0UpJ9Qay6ZHFvRWQ=
+		</data>
+		<key>flutter_assets/assets/images/ripple-xrp-new.png</key>
+		<data>
+		sFE4kGxmjVXwft1cv+H2E7LCxoI=
+		</data>
+		<key>flutter_assets/assets/images/tether.png</key>
+		<data>
+		18+53tue4BYTj3ynxkq5f+Xv9CE=
+		</data>
+		<key>flutter_assets/assets/images/tron--TRX15308837411406.png</key>
+		<data>
+		41onBoouVGmoXaBPIGT5xi7kK6s=
+		</data>
+		<key>flutter_assets/assets/images/up_arrow.png</key>
+		<data>
+		vIFgmv810KYaTsbEAVmPCmfC82U=
+		</data>
+		<key>flutter_assets/assets/images/up_arrow_green.png</key>
+		<data>
+		zL63kyIBC/JQ6uaZYyk4+/9cfeA=
+		</data>
+		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
+		<data>
+		XxTTbEdqMMr+614Mzm3EJYMaT9I=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
 		<data>
@@ -26,11 +74,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		6S2rpTiNGz3kSyT1VZHCtMikvSo=
+		D1T1rGNn12DZxJETGAQYWobz7Us=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		Jnj2K96BjBTlqSJH05+3vjee9u8=
+		34veEcAnylc7N85F5ZJHGLHCMqs=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -38,7 +86,7 @@
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		a4DxLrLwhFWPIKS9/iPPSztqLuI=
+		PVqFLmX9s4tyV1YTHpe6dp/PVWU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -47,33 +95,165 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+			1Ckk1wZp1xfAqBJfhinTb4Azz6Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			VvYOL2DNMCUE31J7F27hsIbiZophaLeG3rW081SdSWU=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lILml1/Dm8FIsisqu4EM3Kg929Q=
+			vKJkVIcw+LGHFnKJGwrQwCREv68=
 			</data>
 			<key>hash2</key>
 			<data>
-			YwkPE2N7k/su9XjVFpdeoUy7GFY9DEY+G4h3aEyC1dg=
+			zX4DZFvESy3Ue3y2JvUcTsv1Whl6t3JBYotHrBZfviE=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TqJyM53yQeCX33f5rXJP1UpgFm4=
+			KW2FEjlko32q7SklmL8YGjKUXKM=
 			</data>
 			<key>hash2</key>
 			<data>
-			wvatkvtPnl3kjCdl4PkXd2U6Cz4UiWOZVh7pzr44dZY=
+			MtUQXpro/F95E9yE41wN0hwncw8gy9RYSvEVq0029iY=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/asba.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/bitcoin-cash-bch.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GLI37V9ZZObdEcdmnQcn1nilnIk=
+			</data>
+			<key>hash2</key>
+			<data>
+			JxVLv/Ke+yYmSHiFy0HjEhj3Z2/6/iAUigQYwiT4jKQ=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/bitcoin.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nr3gprXtTUVNz54YSDxDMHVgBOU=
+			</data>
+			<key>hash2</key>
+			<data>
+			SyfkGsO1+4mr79Bp8IoBB/bvbkHM1jJYM67nG25pQ4Q=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/dogecoin-doge.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AlEOX132YlkbYtlp0d4VKOJKcEk=
+			</data>
+			<key>hash2</key>
+			<data>
+			a417qUa6KL8XjPaEzygLlgvy7rm3B4Dubrptty7VM+M=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/eth.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pS+A1KSHfPJ07GYC4TNC55Td6Sc=
+			</data>
+			<key>hash2</key>
+			<data>
+			KDHP0gS7rzFXdhsLaudxF9rtAqqnjZKLTzGgImUcHGY=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/ltc.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Z2nY+V5hJEi0UpJ9Qay6ZHFvRWQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			Vii/Ziup+qru1tDMsrEseaWZg1rfMFDAvORxQu/9uMA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/ripple-xrp-new.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sFE4kGxmjVXwft1cv+H2E7LCxoI=
+			</data>
+			<key>hash2</key>
+			<data>
+			pNrPutVuUKPuz2DAGJ2nTrm5Q/p6E8QFOTQyrJ4CX5E=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/tether.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			18+53tue4BYTj3ynxkq5f+Xv9CE=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZZ0OTvOMp8fwnBbxWGfXc6Toycgb8NDn7fopGtroPXA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/tron--TRX15308837411406.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			41onBoouVGmoXaBPIGT5xi7kK6s=
+			</data>
+			<key>hash2</key>
+			<data>
+			3jmPUlf7IfUt1KIHL9JpL9BSqNRTw244sAqYlYwwhEM=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/up_arrow.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vIFgmv810KYaTsbEAVmPCmfC82U=
+			</data>
+			<key>hash2</key>
+			<data>
+			WGMgaxxjmiJuXhdXm43+p8/n0q+8MQAvJuJFWfAqJVg=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/up_arrow_green.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zL63kyIBC/JQ6uaZYyk4+/9cfeA=
+			</data>
+			<key>hash2</key>
+			<data>
+			8qvAoAVYJHqtayDWgDc7PG0HL0i41vjW4UANYTXHXkI=
+			</data>
+		</dict>
+		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XxTTbEdqMMr+614Mzm3EJYMaT9I=
+			</data>
+			<key>hash2</key>
+			<data>
+			Nt7OTUXA/dkAWXOmvWbTlkJLC1yvAxfCcd3OIaLWdQQ=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.ttf</key>
@@ -91,22 +271,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6S2rpTiNGz3kSyT1VZHCtMikvSo=
+			D1T1rGNn12DZxJETGAQYWobz7Us=
 			</data>
 			<key>hash2</key>
 			<data>
-			I9xmlH5vh7tZAmJPPfrRvQrKK+wii8/XyKHX5XGaht8=
+			L2IpGcbJA54YxpyjTxHnNf440Zmj3farDOCOOpr3tS8=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jnj2K96BjBTlqSJH05+3vjee9u8=
+			34veEcAnylc7N85F5ZJHGLHCMqs=
 			</data>
 			<key>hash2</key>
 			<data>
-			VSvpoUGvdlFjlDc0iVUbH/PZ0I/50ZPiot5akr270Ic=
+			vs3PneMALqfwGq/Vtrun2PKhdBjd5vzgMSnS41DBSvk=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -124,11 +304,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a4DxLrLwhFWPIKS9/iPPSztqLuI=
+			PVqFLmX9s4tyV1YTHpe6dp/PVWU=
 			</data>
 			<key>hash2</key>
 			<data>
-			yjs1mdT+fSVGjKabCX7QCo0WjAhHdawMYUQDJjAFCA0=
+			+gHgpOEYHGeYAtvKDiRw/YC9zBJOfsyqEN9priH9ieU=
 			</data>
 		</dict>
 	</dict>
