@@ -1,4 +1,3 @@
-import 'package:easy_listview/easy_listview.dart';
 import 'package:flutter/material.dart';
 
 class CoinCard extends StatefulWidget {
@@ -48,6 +47,14 @@ class _CoinCardState extends State<CoinCard> {
       "color1": 0xFFF09018,
       "color2": 0xFFF89828,
     },
+    {
+      "logo": "bitcoin-cash-bch.jpg",
+      "price": 336.62,
+      "name": "Bitcoin Cash ",
+      "percent_change24h": 5.77,
+      "color1": 0xFFF09018,
+      "color2": 0xFFF89828,
+    },
   ];
   var footerBuilder = (context) => Card(
         elevation: 2,
@@ -56,8 +63,7 @@ class _CoinCardState extends State<CoinCard> {
         child: Center(
           child: Text(
             "View All",
-            style: TextStyle(fontSize: 32,
-            color: Colors.white),
+            style: TextStyle(fontSize: 32, color: Colors.white),
           ),
         ),
       );
@@ -72,7 +78,7 @@ class _CoinCardState extends State<CoinCard> {
           child: Text(
             "Top Viewed",
             style: TextStyle(
-                color: Colors.blue[800],
+                color: Color(0xFF005580),
                 fontSize: MediaQuery.of(context).size.width * 0.04,
                 fontWeight: FontWeight.w600),
           ),
@@ -83,15 +89,34 @@ class _CoinCardState extends State<CoinCard> {
             scrollDirection: Axis.horizontal,
             itemCount: data.length,
             itemBuilder: (context, index) {
-              return _cardSlider(
-                context,
-                data[index]['name'],
-                data[index]['price'],
-                data[index]['percent_change24h'],
-                data[index]['logo'],
-                data[index]['color1'],
-                data[index]['color2'],
-              );
+              return index == 5
+                  ? Card(
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      width: 180,
+                      child: Center(
+                        child: Text(
+                          'View All',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                  : _cardSlider(
+                      context,
+                      data[index]['name'],
+                      data[index]['price'],
+                      data[index]['percent_change24h'],
+                      data[index]['logo'],
+                      data[index]['color1'],
+                      data[index]['color2'],
+                    );
             },
           ),
 //          child: EasyListView(
@@ -123,7 +148,7 @@ Widget _cardSlider(BuildContext context, String coin, double rate, double price,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     child: Container(
       padding: EdgeInsets.all(10),
-//      width: MediaQuery.of(context).size.width * 0.6,
+//      width: MediaQuery.of(context).size.width * 0.4,
       width: 180,
       decoration: BoxDecoration(
           gradient: LinearGradient(
