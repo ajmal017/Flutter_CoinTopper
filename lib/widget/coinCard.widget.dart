@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class CoinCard extends StatefulWidget {
   @override
@@ -78,7 +79,7 @@ class _CoinCardState extends State<CoinCard> {
           child: Text(
             "Top Viewed",
             style: TextStyle(
-                color: Color(0xFF005580),
+                color: HexColor("#005580"),
                 fontSize: MediaQuery.of(context).size.width * 0.04,
                 fontWeight: FontWeight.w600),
           ),
@@ -119,22 +120,6 @@ class _CoinCardState extends State<CoinCard> {
                     );
             },
           ),
-//          child: EasyListView(
-//            physics: BouncingScrollPhysics(),
-//            footerBuilder: footerBuilder,
-//            itemCount: data.length,
-//            itemBuilder: (context, index) {
-//              return _cardSlider(
-//                context,
-//                data[index]['name'],
-//                data[index]['price'],
-//                data[index]['percent_change24h'],
-//                data[index]['logo'],
-//                data[index]['color1'],
-//                data[index]['color2'],
-//              );
-//            },
-//          ),
         ),
       ],
     );
