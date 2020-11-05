@@ -57,17 +57,6 @@ class _CoinCardState extends State<CoinCard> {
       "color2": 0xFFF89828,
     },
   ];
-  var footerBuilder = (context) => Card(
-        elevation: 2,
-        color: Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        child: Center(
-          child: Text(
-            "View All",
-            style: TextStyle(fontSize: 32, color: Colors.white),
-          ),
-        ),
-      );
 
   @override
   Widget build(BuildContext context) {
@@ -91,24 +80,29 @@ class _CoinCardState extends State<CoinCard> {
             itemCount: data.length,
             itemBuilder: (context, index) {
               return index == 5
-                  ? Card(
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      width: 180,
-                      child: Center(
-                        child: Text(
-                          'View All',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                  ? FlatButton(
+                      onPressed: () {
+                        print('View All Button pressed');
+                      },
+                      child: Card(
+                        elevation: 3,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          width: 180,
+                          child: Center(
+                            child: Text(
+                              'View All',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  )
+                    )
                   : _cardSlider(
                       context,
                       data[index]['name'],

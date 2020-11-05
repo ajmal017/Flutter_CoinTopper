@@ -1,8 +1,24 @@
+import 'package:cointopper/bloc/dashboardBloc/dashboard_bloc.dart';
+import 'package:cointopper/bloc/dashboardBloc/dashboard_event.dart';
+import 'package:cointopper/repositories/repo.dart';
 import 'package:cointopper/screens/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider<DashboardBloc>(
+        create: (context) {
+          return DashboardBloc(
+            coinTopperRepository: CoinTopperRepository(),
+          )..add(LoadGlobalDataCoin());
+        },
+      ),
+    ],
+    child: MyApp(),
+  ));
+//  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

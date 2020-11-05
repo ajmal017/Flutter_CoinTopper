@@ -8,6 +8,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0-nullsafety.1",
       "packageUri": "lib/",
@@ -44,6 +50,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "equatable",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0-nullsafety.1",
       "packageUri": "lib/",
@@ -54,6 +66,12 @@
       "rootUri": "file:///Users/codecrunch/Developer/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.10"
+    },
+    {
+      "name": "flutter_bloc",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-6.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
     },
     {
       "name": "flutter_test",
@@ -74,6 +92,18 @@
       "languageVersion": "2.8"
     },
     {
+      "name": "http",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
       "packageUri": "lib/",
@@ -92,10 +122,28 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/nested-0.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0-nullsafety.1",
       "packageUri": "lib/",
       "languageVersion": "2.10"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "sky_engine",
@@ -158,7 +206,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-10-26T09:37:59.341986Z",
+  "generated": "2020-10-29T11:43:07.344301Z",
   "generator": "pub",
   "generatorVersion": "2.10.2"
 }
