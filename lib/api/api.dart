@@ -1,7 +1,9 @@
 import 'dart:convert';
 
 import 'package:cointopper/entities/globalDataCoin_data_entity.dart';
+import 'package:cointopper/entities/topViewedCoinList_data_entity.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
+import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiClient {
@@ -21,13 +23,28 @@ class ApiClient {
     });
     var datat = [];
     Map<String, dynamic> map = json.decode(response.body);
-    print('map ==>> ${map['data']}');
     var dummy = map['data'];
     datat.add(dummy);
-    print('Dummy ==>> $datat');
     yield datat
         .map((dynamic item) => GlobalDataCoinResponseModel.fromEntity(
         GlobalDataCoinDataEntity.fromJson(item as Map<String, dynamic>)))
+        .toList();
+  }
+
+  Stream<List<TopViewedCoinListResponseModel>> fetchTopViewedCoinList() async* {
+    print('Result TopViewedCoinList ==>>');
+    final response =
+    await httpClient.get(Uri.encodeFull('${this.baseUrl + "topsearched"}'), headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+    });
+
+    Map<String, dynamic> map = json.decode(response.body);
+    List<dynamic> results = map["data"];
+    print('Result TopViewedCoinList ==>> $results');
+    yield results
+        .map((dynamic item) => TopViewedCoinListResponseModel.fromEntity(
+        TopViewedCoinListEntity.fromJson(item as Map<String, dynamic>)))
         .toList();
   }
 }

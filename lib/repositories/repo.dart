@@ -1,5 +1,6 @@
 import 'package:cointopper/api/api.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
+import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
 
 class CoinTopperRepository {
   ApiClient apiClient;
@@ -11,5 +12,9 @@ class CoinTopperRepository {
 
   Stream<List<GlobalDataCoinResponseModel>> loadGlobalDataCoin() async* {
     yield* apiClient.fetchGlobalDataCoin();
+  }
+
+  Stream<List<TopViewedCoinListResponseModel>> loadTopViewedCoinList() async* {
+    yield* apiClient.fetchTopViewedCoinList();
   }
 }

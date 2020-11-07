@@ -1,9 +1,12 @@
 import 'package:cointopper/bloc/dashboardBloc/dashboard_bloc.dart';
 import 'package:cointopper/bloc/dashboardBloc/dashboard_event.dart';
+import 'package:cointopper/bloc/topViewCoinListBloc/topViewedCoinList_bloc.dart';
 import 'package:cointopper/repositories/repo.dart';
 import 'package:cointopper/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'bloc/topViewCoinListBloc/topViewedCoinList_event.dart';
 
 void main() {
   runApp(MultiBlocProvider(
@@ -15,6 +18,11 @@ void main() {
           )..add(LoadGlobalDataCoin());
         },
       ),
+//      BlocProvider<TopViewedCoinListBloc>(
+//        create: (BuildContext context) => TopViewedCoinListBloc(
+//          coinRepository: CoinTopperRepository(),
+//        )..add(LoadTopViewedCoinList()),
+//      ),
     ],
     child: MyApp(),
   ));

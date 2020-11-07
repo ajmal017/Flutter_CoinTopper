@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cointopper/bloc/dashboardBloc/dashboard_event.dart';
 import 'package:cointopper/bloc/dashboardBloc/dashboard_state.dart';
 import 'package:cointopper/repositories/repo.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
 class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
@@ -15,19 +15,28 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   @override
   Stream<DashboardState> mapEventToState(DashboardEvent event) async* {
-    print('mapEventToState ==>> ');
     if (event is LoadGlobalDataCoin) {
-      print('LoadGlobalDataCoin ==>> event');
+      print('mapEventToState LoadGlobalDataCoin ==>> if');
       yield* _mapLoadDashboardState();
     }
+
     if (event is UpdateGlobalDataCoin) {
-      print('UpdateGlobalDataCoin ==>> event');
+      print('mapEventToState UpdateGlobalDataCoin ==>> if');
       yield* _mapUpdateDashboardState(event);
+    }
+
+    if (event is LoadTopViewedCoinList) {
+      print('mapEventToState TopViewedCoinList ==>> if');
+      yield* _mapLoadTopCoinsListState();
+    }
+    if (event is UpdateTopViewedCoinList) {
+      print('mapEventToState TopViewedCoinList ==>> else');
+      yield* _mapUpdateTopCoinsListState(event);
     }
   }
 
   Stream<DashboardState> _mapLoadDashboardState() async* {
-    print("_mapLoadDashboardState func ==>>");
+    print('_mapLoadDashboardState TopViewedCoinList ==>> ');
     _dashboardSubscription?.cancel();
     _dashboardSubscription = coinTopperRepository.loadGlobalDataCoin().listen(
           (list) => add(UpdateGlobalDataCoin(list)),
@@ -36,8 +45,23 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   Stream<DashboardState> _mapUpdateDashboardState(
       UpdateGlobalDataCoin event) async* {
-    print(' event.globalDataCoin ==>> ${event.globalDataCoin}');
+    print('_mapUpdateDashboardState TopViewedCoinList ==>> ');
     yield DashboardLoadSuccess(event.globalDataCoin);
+  }
+
+  Stream<DashboardState> _mapLoadTopCoinsListState() async* {
+    print('_mapLoadTopCoinsListState TopViewedCoinList ==>> ');
+    _dashboardSubscription?.cancel();
+    _dashboardSubscription =
+        coinTopperRepository.loadTopViewedCoinList().listen(
+              (list) => add(UpdateTopViewedCoinList(list)),
+            );
+  }
+
+  Stream<DashboardState> _mapUpdateTopCoinsListState(
+      UpdateTopViewedCoinList event) async* {
+    print('_mapUpdateTopCoinsListState TopViewedCoinList ==>> ');
+    yield TopViewedCoinListLoadSuccess(event.topViewedCoinList);
   }
 
   @override
