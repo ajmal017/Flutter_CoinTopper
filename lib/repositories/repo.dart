@@ -1,4 +1,5 @@
-import 'package:cointopper/api/api.dart';
+import 'package:cointopper/api/api_client.dart';
+import 'package:cointopper/models/currencyList_response_model.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
 import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
 
@@ -12,6 +13,10 @@ class CoinTopperRepository {
 
   Stream<List<GlobalDataCoinResponseModel>> loadGlobalDataCoin() async* {
     yield* apiClient.fetchGlobalDataCoin();
+  }
+
+  Stream<List<CurrencyListResponseModel>> loadCurrencyList() async* {
+    yield* apiClient.fetchCurrencyList();
   }
 
   Stream<List<TopViewedCoinListResponseModel>> loadTopViewedCoinList() async* {

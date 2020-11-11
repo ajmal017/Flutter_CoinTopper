@@ -1,3 +1,4 @@
+import 'package:cointopper/models/currencyList_response_model.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
 import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
 import 'package:equatable/equatable.dart';
@@ -20,6 +21,16 @@ class DashboardLoadSuccess extends DashboardState {
   List<Object> get props => [globalDataCoin];
 }
 
+// Currency List DropDown
+class CurrencyListLoadSuccess extends DashboardState {
+  final List<CurrencyListResponseModel> currencyList;
+
+  CurrencyListLoadSuccess([this.currencyList = const []]);
+
+  @override
+  List<Object> get props => [currencyList];
+}
+
 class DashboardLoadFailure extends DashboardState {}
 
 //Top Viewed Coin List Event
@@ -28,7 +39,7 @@ class TopViewedCoinListLoadInProgress extends DashboardState {}
 class TopViewedCoinListLoadSuccess extends DashboardState {
   final List<TopViewedCoinListResponseModel> topViewedCoinList;
 
-  const TopViewedCoinListLoadSuccess([this.topViewedCoinList = const []]);
+  TopViewedCoinListLoadSuccess([this.topViewedCoinList = const []]);
 
   @override
   List<Object> get props => [topViewedCoinList];

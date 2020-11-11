@@ -2,6 +2,7 @@ import 'package:cointopper/bloc/dashboardBloc/dashboard_bloc.dart';
 import 'package:cointopper/bloc/dashboardBloc/dashboard_event.dart';
 import 'package:cointopper/bloc/topViewCoinListBloc/topViewedCoinList_bloc.dart';
 import 'package:cointopper/repositories/repo.dart';
+import 'package:cointopper/screens/bottomTabNavigation.dart';
 import 'package:cointopper/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+//      home: Home(),
+      home: BottomTabNavigationPage(),
     );
   }
 }

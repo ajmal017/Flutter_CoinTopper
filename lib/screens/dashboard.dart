@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
             bottom: false,
             child: BlocBuilder<DashboardBloc, DashboardState>(
               builder: (context, state) {
+                print('Dashboard Bloc ==>> $state');
                 if (state is DashboardLoadSuccess) {
                   var _formattedMarketCap = NumberFormat.compactCurrency(
                     decimalDigits: 2,
@@ -128,30 +129,18 @@ class _HomeState extends State<Home> {
                                       ),
                                     ),
                                   ),
-                                  DropdownButton(
-                                    iconSize: 24,
-                                    style: TextStyle(color: Colors.white60),
-//                                    items: state.topViewedCoinList.map((value) {
-//                                      return DropdownMenuItem(
-//                                        value: value.symbol,
-//                                        child: Text(' ${value.symbol}'),
-//                                      );
-//                                    }).toList(),
-                                    value: dropdownValue,
-                                    onChanged: (String newValue) {
-                                      // print('newvalue=====> $newValue');
-                                      setState(() {
-                                        dropdownValue = newValue;
-                                      });
-                                    },
-                                  ),
+                                  DropDownCurrencyList(),
 //                                  DropdownButton(
 //                                    iconSize: 24,
 //                                    style: TextStyle(color: Colors.white60),
-//                                    items: ,
+////                                    items: state.currencyList.map((value) {
+////                                      return DropdownMenuItem(
+////                                        value: value.symbol,
+////                                        child: Text(' ${value.symbol}'),
+////                                      );
+////                                    }).toList(),
 //                                    value: dropdownValue,
 //                                    onChanged: (String newValue) {
-//                                      // print('newvalue=====> $newValue');
 //                                      setState(() {
 //                                        dropdownValue = newValue;
 //                                      });
@@ -210,13 +199,55 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   );
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
                 }
-                return CircularProgressIndicator();
               },
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class DropDownCurrencyList extends StatefulWidget {
+  @override
+  _DropDownCurrencyListState createState() => _DropDownCurrencyListState();
+}
+
+class _DropDownCurrencyListState extends State<DropDownCurrencyList> {
+  String dropdownValue = 'USD';
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: BlocBuilder<DashboardBloc, DashboardState>(
+          builder: (context, state) {
+        if (state is CurrencyListLoadSuccess) {
+          print("Currency List ==>> ${state.currencyList}");
+          return DropdownButton(
+            iconSize: 24,
+            style: TextStyle(color: Colors.white60),
+            items: state.currencyList.map((value) {
+              return DropdownMenuItem(
+                value: value.symbol,
+                child: Text(' ${value.symbol}'),
+              );
+            }).toList(),
+            value: dropdownValue,
+            onChanged: (String newValue) {
+              setState(() {
+                dropdownValue = newValue;
+              });
+            },
+          );
+        } else {
+          return Text('List');
+        }
+      }),
     );
   }
 }
