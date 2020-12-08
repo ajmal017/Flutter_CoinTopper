@@ -11,12 +11,12 @@ abstract class TopViewedCoinListState extends Equatable {
 class TopViewedCoinListLoadInProgress extends TopViewedCoinListState {}
 
 class TopViewedCoinListLoadSuccess extends TopViewedCoinListState {
-  final List<TopViewedCoinListResponseModel> topCoinsList;
+  final List<TopViewedCoinListResponseModel> topViewedCoinsList;
 
-  const TopViewedCoinListLoadSuccess([this.topCoinsList = const []]);
+  const TopViewedCoinListLoadSuccess([this.topViewedCoinsList = const []]);
 
   @override
-  List<Object> get props => [topCoinsList];
+  List<Object> get props => [topViewedCoinsList];
 }
 
 class  TopViewedCoinListLoadFailure extends TopViewedCoinListState {}

@@ -3,13 +3,13 @@ import 'package:meta/meta.dart';
 
 @immutable
 class CurrencyListResponseModel {
-  final double id;
+  final int id;
   final String name;
   final String code;
   final String symbol;
   final String format;
   final String exchange_rate;
-  final double active;
+  final int active;
   final String created_at;
   final String updated_at;
 

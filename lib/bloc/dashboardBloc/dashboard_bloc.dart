@@ -24,13 +24,13 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
         yield* _mapUpdateDashboardState(event);
       }
 
-      if (event is UpdateCurrencyList) {
-        yield* _mapUpdateCurrencyListState(event);
-      }
-
-      if (event is UpdateTopViewedCoinList) {
-        yield* _mapUpdateTopCoinsListState(event);
-      }
+//      if (event is UpdateCurrencyList) {
+//        yield* _mapUpdateCurrencyListState(event);
+//      }
+//
+//      if (event is UpdateTopViewedCoinList) {
+//        yield* _mapUpdateTopCoinsListState(event);
+//      }
     }
   }
 
@@ -40,14 +40,14 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
           (list) => add(UpdateGlobalDataCoin(list)),
         );
 
-    _dashboardSubscription = coinTopperRepository.loadCurrencyList().listen(
-          (list) => add(UpdateCurrencyList(list)),
-        );
-
-    _dashboardSubscription =
-        coinTopperRepository.loadTopViewedCoinList().listen(
-              (list) => add(UpdateTopViewedCoinList(list)),
-            );
+//    _dashboardSubscription = coinTopperRepository.loadCurrencyList().listen(
+//          (list) => add(UpdateCurrencyList(list)),
+//        );
+//
+//    _dashboardSubscription =
+//        coinTopperRepository.loadTopViewedCoinList().listen(
+//              (list) => add(UpdateTopViewedCoinList(list)),
+//            );
   }
 
   Stream<DashboardState> _mapUpdateDashboardState(
@@ -55,15 +55,16 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
     yield DashboardLoadSuccess(event.globalDataCoin);
   }
 
-  Stream<DashboardState> _mapUpdateCurrencyListState(
-      UpdateCurrencyList event) async* {
-    yield CurrencyListLoadSuccess(event.currencyList);
-  }
-
-  Stream<DashboardState> _mapUpdateTopCoinsListState(
-      UpdateTopViewedCoinList event) async* {
-    yield TopViewedCoinListLoadSuccess(event.topViewedCoinList);
-  }
+//  Stream<DashboardState> _mapUpdateCurrencyListState(
+//      UpdateCurrencyList event) async* {
+//    print("entered");
+//    yield CurrencyListLoadSuccess(event.currencyList);
+//  }
+//
+//  Stream<DashboardState> _mapUpdateTopCoinsListState(
+//      UpdateTopViewedCoinList event) async* {
+//    yield TopViewedCoinListLoadSuccess(event.topViewedCoinList);
+//  }
 
   @override
   Future<void> close() {

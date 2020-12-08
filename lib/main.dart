@@ -1,9 +1,16 @@
+import 'package:cointopper/bloc/coinDetailBloc/coinDetail_bloc.dart';
+import 'package:cointopper/bloc/coinDetailBloc/coinDetail_event.dart';
+import 'package:cointopper/bloc/coinListBloc/coinList_bloc.dart';
+import 'package:cointopper/bloc/coinListBloc/coinList_event.dart';
+import 'package:cointopper/bloc/currencyListBloc/currencyList_bloc.dart';
+import 'package:cointopper/bloc/currencyListBloc/currencyList_event.dart';
 import 'package:cointopper/bloc/dashboardBloc/dashboard_bloc.dart';
 import 'package:cointopper/bloc/dashboardBloc/dashboard_event.dart';
+import 'package:cointopper/bloc/searchCoinBloc/searchCoinList_bloc.dart';
+import 'package:cointopper/bloc/searchCoinBloc/searchCoinList_event.dart';
 import 'package:cointopper/bloc/topViewCoinListBloc/topViewedCoinList_bloc.dart';
 import 'package:cointopper/repositories/repo.dart';
 import 'package:cointopper/screens/bottomTabNavigation.dart';
-import 'package:cointopper/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,11 +26,31 @@ void main() {
           )..add(LoadGlobalDataCoin());
         },
       ),
-//      BlocProvider<TopViewedCoinListBloc>(
-//        create: (BuildContext context) => TopViewedCoinListBloc(
-//          coinRepository: CoinTopperRepository(),
-//        )..add(LoadTopViewedCoinList()),
-//      ),
+      BlocProvider<CurrencyListBloc>(
+        create: (BuildContext context) => CurrencyListBloc(
+          coinTopperRepository: CoinTopperRepository(),
+        )..add(LoadCurrencyList()),
+      ),
+      BlocProvider<TopViewedCoinListBloc>(
+        create: (BuildContext context) => TopViewedCoinListBloc(
+          coinRepository: CoinTopperRepository(),
+        )..add(LoadTopViewedCoinList()),
+      ),
+      BlocProvider<CoinListBloc>(
+        create: (BuildContext context) => CoinListBloc(
+          coinTopperRepository: CoinTopperRepository(),
+        )..add(LoadCoinList()),
+      ),
+      BlocProvider<SearchCoinListBloc>(
+        create: (BuildContext context) => SearchCoinListBloc(
+          coinTopperRepository: CoinTopperRepository(),
+        )..add(LoadSearchCoinList()),
+      ),
+      BlocProvider<CoinDetailBloc>(
+        create: (BuildContext context) => CoinDetailBloc(
+          coinTopperRepository: CoinTopperRepository(),
+        )..add(LoadCoinDetail("")),
+      ),
     ],
     child: MyApp(),
   ));

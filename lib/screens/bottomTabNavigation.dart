@@ -138,7 +138,6 @@ class _BottomTabNavigationPageState extends State<BottomTabNavigationPage> {
               )),
         ],
         currentIndex: selectedIndex,
-//        fixedColor: Colors.deepPurple,
         onTap: onItemTapped,
       ),
     );
