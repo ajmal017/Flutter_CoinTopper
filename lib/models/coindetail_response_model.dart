@@ -21,10 +21,10 @@ class CoinDetailResponseModel {
   final double price;
   final double price_usd;
   final dynamic price_btc;
-  final dynamic market_cap_usd;
+  final int market_cap_usd;
   final double volume24h_usd;
   final int volume24h_usd_to;
-  final dynamic available_supply;
+  final int available_supply;
   final int max_supply;
   final String percent_change1h;
   final double percent_change24h;
@@ -62,8 +62,7 @@ class CoinDetailResponseModel {
   final int market_id;
   final String created_at;
   final String updated_at;
-//  final List<GuidesEntity> guides;
-  final List<dynamic> guides;
+  final List<GuidesEntity> guides;
 
   CoinDetailResponseModel(
     this.id,

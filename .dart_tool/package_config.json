@@ -9,7 +9,7 @@
     },
     {
       "name": "bloc",
-      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-6.1.0",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-6.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.6"
     },
@@ -42,6 +42,18 @@
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0-nullsafety.1",
       "packageUri": "lib/",
       "languageVersion": "2.10"
+    },
+    {
+      "name": "charts_common",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/charts_common-0.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "charts_flutter",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/charts_flutter-0.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "1.23"
     },
     {
       "name": "clock",
@@ -123,7 +135,7 @@
     },
     {
       "name": "font_awesome_flutter",
-      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-8.10.0",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-8.10.1",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -150,6 +162,12 @@
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
       "packageUri": "lib/",
       "languageVersion": "2.5"
+    },
+    {
+      "name": "logging",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/logging-0.11.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "matcher",
@@ -195,7 +213,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+2",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+3",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -320,7 +338,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-11-26T16:25:39.062032Z",
+  "generated": "2020-12-16T03:12:18.348117Z",
   "generator": "pub",
   "generatorVersion": "2.10.4"
 }

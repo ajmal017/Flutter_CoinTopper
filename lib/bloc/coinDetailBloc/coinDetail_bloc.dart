@@ -26,7 +26,6 @@ class CoinDetailBloc extends Bloc<CoinDetailEvent, CoinDetailState> {
   }
 
   Stream<CoinDetailState> _mapLoadCoinDetailState(symbol) async* {
-    print("bloc entered ==>> ");
     _coinDetailSubscription?.cancel();
     _coinDetailSubscription =
         coinTopperRepository.loadCoinDetailsList(symbol).listen(

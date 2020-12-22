@@ -1,21 +1,6 @@
 import 'package:cointopper/entities/guides_entity.dart';
 import 'package:equatable/equatable.dart';
 
-
-class Data {
-  final String title;
-  final String photo;
-
-  Data({this.title, this.photo});
-
-  factory Data.fromJson(Map<String, dynamic> json) {
-    return Data(
-      title: json['title_en'],
-      photo: json['photo_file'],
-    );
-  }
-}
-
 class CoinDetailEntity extends Equatable {
   final int id;
   final String name;
@@ -34,10 +19,10 @@ class CoinDetailEntity extends Equatable {
   final double price;
   final double price_usd;
   final dynamic price_btc;
-  final dynamic market_cap_usd;
+  final int market_cap_usd;
   final double volume24h_usd;
   final int volume24h_usd_to;
-  final dynamic available_supply;
+  final int available_supply;
   final int max_supply;
   final String percent_change1h;
   final double percent_change24h;
@@ -75,8 +60,7 @@ class CoinDetailEntity extends Equatable {
   final int market_id;
   final String created_at;
   final String updated_at;
-//  final List<GuidesEntity> guides;
-  final List<dynamic> guides;
+  final List<GuidesEntity> guides;
 
   CoinDetailEntity(
     this.id,
@@ -268,11 +252,9 @@ class CoinDetailEntity extends Equatable {
   }
 
   static CoinDetailEntity fromJson(Map<String, Object> json) {
-//    var guidesList = json['guides'] as List;
-//    List<GuidesEntity> _guides =
-//        guidesList.map((i) => GuidesEntity.fromJson(i)).toList();
-    var list = json['guides'] as List;
-    List<Data> _dataList = list.map((i) => Data.fromJson(i)).toList();
+    var guidesList = json['guides'] as List;
+    List<GuidesEntity> _guides =
+        guidesList.map((i) => GuidesEntity.fromJson(i)).toList();
     return CoinDetailEntity(
       json["id"] as int,
       json["name"] as String,
@@ -291,10 +273,10 @@ class CoinDetailEntity extends Equatable {
       json["price"] as double,
       json["price_usd"] as double,
       json["price_btc"] as dynamic,
-      json["market_cap_usd"] as dynamic,
+      json["market_cap_usd"] as int,
       json["volume24h_usd"] as double,
       json["volume24h_usd_to"] as int,
-      json["available_supply"] as dynamic,
+      json["available_supply"] as int,
       json["max_supply"] as int,
       json["percent_change1h"] as String,
       json["percent_change24h"] as double,
@@ -332,8 +314,7 @@ class CoinDetailEntity extends Equatable {
       json["market_id"] as int,
       json["created_at"] as String,
       json["updated_at"] as String,
-//      _guides,
-      _dataList,
+      _guides,
     );
   }
 }

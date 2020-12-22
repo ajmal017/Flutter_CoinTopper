@@ -3,11 +3,12 @@ import 'package:cointopper/bloc/coinDetailBloc/coinDetail_bloc.dart';
 import 'package:cointopper/bloc/coinDetailBloc/coinDetail_event.dart';
 import 'package:cointopper/bloc/coinDetailBloc/coinDetail_state.dart';
 import 'package:cointopper/entities/guides_entity.dart';
+import 'package:cointopper/widget/graph.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:sticky_headers/sticky_headers.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -35,7 +36,7 @@ class _CoinDetailState extends State<CoinDetail> {
             children: [
               Container(
                 height: 200,
-                padding: EdgeInsets.only(top: 30, left: 10, right: 10),
+                padding: EdgeInsets.only(top: 32, left: 8, right: 8),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.centerLeft,
@@ -58,8 +59,8 @@ class _CoinDetailState extends State<CoinDetail> {
                                 color: Colors.white30,
                               ),
                               child: Image(
-                                width: 30,
-                                height: 30,
+                                width: 32,
+                                height: 32,
                                 image: NetworkImage(data.logo),
                               ),
                             ),
@@ -67,9 +68,12 @@ class _CoinDetailState extends State<CoinDetail> {
                               width: 6,
                             ),
                             Text(
-                              data.name,
+                              '${data.name}/ ${data.symbol}',
                               style: TextStyle(
-                                  fontSize: 18, color: Colors.white60),
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.05,
+                                color: Colors.white60,
+                              ),
                             ),
                           ],
                         ),
@@ -85,7 +89,8 @@ class _CoinDetailState extends State<CoinDetail> {
                             ),
                             child: Icon(
                               Icons.close,
-                              color: Colors.white60,
+                              color: Colors.white,
+                              size: MediaQuery.of(context).size.width * 0.05,
                             ),
                           ),
                         )
@@ -95,9 +100,10 @@ class _CoinDetailState extends State<CoinDetail> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "\$${data.price}",
+                          '\$${double.parse((data.price).toStringAsFixed(2))}',
                           style: TextStyle(
-                              fontSize: 26,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.08,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -105,17 +111,20 @@ class _CoinDetailState extends State<CoinDetail> {
                           width: 10,
                         ),
                         Image(
-                          height: 10,
-                          width: 10,
-                          image: AssetImage("assets/images/up_arrow.png"),
+                          height: 12,
+                          width: 12,
+                          image: AssetImage(data.percent_change24h > 0
+                              ? "assets/images/up_arrow.png"
+                              : "assets/images/down_arrow.png"),
                         ),
                         SizedBox(
                           width: 5,
                         ),
                         Text(
-                          "${data.percent_change24h}%",
+                          '${double.parse((data.percent_change24h).toStringAsFixed(2))}%',
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.03,
                               color: Colors.white60,
                               fontWeight: FontWeight.bold),
                         ),
@@ -129,7 +138,7 @@ class _CoinDetailState extends State<CoinDetail> {
                           size: 14,
                         ),
                         Text(
-                          "${data.price_btc.toStringAsFixed(8)}",
+                          "${double.parse((data.price_btc).toStringAsFixed(8))}",
                           style: TextStyle(
                               fontSize: 14,
                               color: Colors.white60,
@@ -152,7 +161,9 @@ class _CoinDetailState extends State<CoinDetail> {
                                   Text(
                                     "\$${data.high24_usd}",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.05,
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -160,9 +171,11 @@ class _CoinDetailState extends State<CoinDetail> {
                                     width: 8,
                                   ),
                                   Text(
-                                    "24 HOUR HIGH",
+                                    "24 HRS HIGH",
                                     style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.025,
                                         color: Colors.white60,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -173,7 +186,9 @@ class _CoinDetailState extends State<CoinDetail> {
                                   Text(
                                     "\$${data.low24_usd}",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.05,
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -181,9 +196,11 @@ class _CoinDetailState extends State<CoinDetail> {
                                     width: 8,
                                   ),
                                   Text(
-                                    "24 HOUR LOW",
+                                    "24 HRS LOW",
                                     style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.025,
                                         color: Colors.white60,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -193,9 +210,8 @@ class _CoinDetailState extends State<CoinDetail> {
                           ),
                         ),
                         Container(
-                          // width: MediaQuery.of(context).size.width * 0.4,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.12,
@@ -212,7 +228,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                 ),
                               ),
                               SizedBox(
-                                width: 6,
+                                width: 8,
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.12,
@@ -229,7 +245,7 @@ class _CoinDetailState extends State<CoinDetail> {
                                 ),
                               ),
                               SizedBox(
-                                width: 6,
+                                width: 8,
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.12,
@@ -253,6 +269,32 @@ class _CoinDetailState extends State<CoinDetail> {
                   ],
                 ),
               ),
+//              SingleChildScrollView(
+//                child: Column(children: [
+//                  Expanded(child: GraphWidget()),
+//                  Expanded(
+//                    child: cardsBody(
+//                      context,
+//                      data.volume24h_usd,
+//                      data.available_supply,
+//                      data.market_cap_usd,
+//                      data.intro,
+//                      data.youtube,
+//                      data.website,
+//                      data.explorer,
+//                      data.facebook,
+//                      data.blog,
+//                      data.forum,
+//                      data.github,
+//                      data.raddit,
+//                      data.slack,
+//                      data.paper,
+//                      data.guides,
+//                    ),
+//                  ),
+//                ],),
+//              ),
+//              Expanded(child: GraphWidget()),
               Expanded(
                 child: cardsBody(
                   context,
@@ -269,8 +311,8 @@ class _CoinDetailState extends State<CoinDetail> {
                   data.github,
                   data.raddit,
                   data.slack,
-//                  data.guides,
-                  title,
+                  data.paper,
+                  data.guides,
                 ),
               ),
             ],
@@ -285,7 +327,11 @@ class _CoinDetailState extends State<CoinDetail> {
   }
 }
 
-Widget _buildTotalCap(String name, double volume) {
+Widget _buildTotalCap(context, String name, dynamic value) {
+  var _formattedValue = NumberFormat.compactCurrency(
+    decimalDigits: 2,
+    symbol: '\$',
+  ).format(value);
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Row(
@@ -294,16 +340,14 @@ Widget _buildTotalCap(String name, double volume) {
         Text(
           name,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: MediaQuery.of(context).size.width * 0.05,
             color: Colors.black54,
           ),
         ),
         Text(
-          (volume >= 1000000 && volume < (1000000 * 10 * 100))
-              ? (volume / 1000000).toStringAsFixed(2) + "M"
-              : (volume / (1000000 * 10 * 100)).toStringAsFixed(2) + "B",
+          _formattedValue,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: MediaQuery.of(context).size.width * 0.05,
             color: Colors.blue[800],
           ),
         ),
@@ -314,9 +358,9 @@ Widget _buildTotalCap(String name, double volume) {
 
 Widget cardsBody(
   BuildContext context,
-  double volume,
-  double coin,
-  double cap,
+  double volume24h_usd,
+  int available_supply,
+  int market_cap_usd,
   String intro,
   String youtube,
   String website,
@@ -327,9 +371,57 @@ Widget cardsBody(
   String github,
   String raddit,
   String slack,
-//  final GuidesEntity guides
-  final title,
+  String paper,
+  List<GuidesEntity> guides,
 ) {
+  List<dynamic> impLinks = [
+    {
+      'name': 'Website',
+      'logo': 'assets/images/browser.png',
+      'link': website,
+    },
+    {
+      'name': 'Explorer',
+      'logo': 'assets/images/safari.png',
+      'link': explorer,
+    },
+    {
+      'name': 'Facebook',
+      'logo': 'assets/images/facebook.png',
+      'link': facebook,
+    },
+    {
+      'name': 'Blog',
+      'logo': 'assets/images/blogger.png',
+      'link': blog,
+    },
+    {
+      'name': 'WhitePaper',
+      'logo': 'assets/images/origami-white-page.png',
+      'link': paper,
+    },
+    {
+      'name': 'Forum',
+      'logo': 'assets/images/chat.png',
+      'link': forum,
+    },
+    {
+      'name': 'Github',
+      'logo': 'assets/images/github.png',
+      'link': github,
+    },
+    {
+      'name': 'Reddit',
+      'logo': 'assets/images/reddit.png',
+      'link': raddit,
+    },
+    {
+      'name': 'Slack',
+      'logo': 'assets/images/slack.png',
+      'link': slack,
+    },
+  ];
+
   Future<void> _launched;
   Future<void> _launchInWebView(String url) async {
     if (await canLaunch(url)) {
@@ -344,7 +436,7 @@ Widget cardsBody(
     }
   }
 
-  Widget carousel = title == null
+  Widget carousel = guides == null
       ? Container(
           child: Center(
             child: Text(
@@ -355,64 +447,70 @@ Widget cardsBody(
         )
       : CarouselSlider(
           options: CarouselOptions(
-            height: 300,
+            height: 150,
             autoPlay: true,
             viewportFraction: 1,
-            aspectRatio: 1.5,
+            aspectRatio: 1,
             enlargeCenterPage: true,
           ),
-          items: title.map<Widget>((data) {
-            return new Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: new BoxDecoration(),
-                child: Container(
+          items: guides.map<Widget>((data) {
+            return GestureDetector(
+              onTap: () {
+                _launched = _launchInWebView(data.post_link);
+              },
+              child: new Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: new BoxDecoration(),
                   child: Container(
-                    margin: EdgeInsets.all(5.0),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        child: Stack(
-                          children: <Widget>[
-                            Image.network(
-                              data.photo,
-                              height: double.infinity,
-                              width: double.infinity,
-                              fit: BoxFit.fill,
-                            ),
-                            Positioned(
-                              bottom: 0.0,
-                              left: 0.0,
-                              right: 0.0,
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color.fromARGB(200, 0, 0, 0),
-                                        Color.fromARGB(0, 0, 0, 0)
-                                      ],
-                                      begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter,
-                                    ),
-                                  ),
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 10.0, horizontal: 20.0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        data.title,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                    child: Container(
+                      margin: EdgeInsets.all(5.0),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                          child: Stack(
+                            children: <Widget>[
+                              Image.network(
+                                data.photo_file,
+                                height: 150,
+                                width: 350,
+                                fit: BoxFit.fill,
+                              ),
+                              Positioned(
+                                bottom: 0.0,
+                                left: 0.0,
+                                right: 0.0,
+                                child: Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Color.fromARGB(200, 0, 0, 0),
+                                          Color.fromARGB(0, 0, 0, 0)
+                                        ],
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
                                       ),
-                                    ],
-                                  )),
-                            ),
-                          ],
-                        )),
-                  ),
-                ));
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 10.0, horizontal: 20.0),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          data.title_en,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14.0,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    )),
+                              ),
+                            ],
+                          )),
+                    ),
+                  )),
+            );
           }).toList(),
         );
 
@@ -420,11 +518,57 @@ Widget cardsBody(
     initialVideoId: youtube,
     flags: YoutubePlayerFlags(
       enableCaption: true,
+      autoPlay: false,
     ),
   );
+  var graphSelect = false;
   return SingleChildScrollView(
     child: Column(
       children: [
+        Container(
+          margin: EdgeInsets.only(bottom: 10),
+          decoration: BoxDecoration(
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.black54,
+                  blurRadius: 15.0,
+                  offset: Offset(0.0, 0.75))
+            ],
+            color: Colors.white10,
+          ),
+          child: Container(
+            color: Colors.white,
+            padding: EdgeInsets.only(top:8.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height:40.0,
+                      width: 60.0,
+                      child: FlatButton(
+                        onPressed: (){},
+                        hoverColor: Colors.white10,
+                        child: Text('7D'),
+                      ),
+                    ),
+                    Container(
+                      height:40.0,
+                      width: 60.0,
+                      child: FlatButton(
+                        onPressed: (){},
+                        hoverColor: Colors.white10,
+                        child: Text('All'),
+                      ),
+                    ),
+                  ],
+                ),
+                GraphWidget(),
+              ],
+            ),
+          ),
+        ),
         Container(
           margin: EdgeInsets.all(10),
           child: Card(
@@ -436,17 +580,17 @@ Widget cardsBody(
               ),
               child: Column(
                 children: [
-                  _buildTotalCap("24 Hrs Volume", volume),
+                  _buildTotalCap(context, "24 Hrs Volume", volume24h_usd),
                   Divider(
                     color: Colors.blue[800],
                     thickness: 2,
                   ),
-                  _buildTotalCap("Total Coins", coin),
+                  _buildTotalCap(context, "Total Coins", available_supply),
                   Divider(
                     color: Colors.blue[800],
                     thickness: 2,
                   ),
-                  _buildTotalCap("Market Cap", cap),
+                  _buildTotalCap(context, "Market Cap", market_cap_usd),
                 ],
               ),
             ),
@@ -480,7 +624,7 @@ Widget cardsBody(
                       fontSize: 16,
                       color: Colors.black54,
                     ),
-                    overflow: TextOverflow.clip,
+                    overflow: TextOverflow.ellipsis,
                     maxLines: 4,
                   ),
                   SizedBox(
@@ -523,225 +667,69 @@ Widget cardsBody(
           ),
         ),
         Container(
-          margin: EdgeInsets.all(10),
+          margin: EdgeInsets.all(10.0),
           child: Card(
             elevation: 3,
             child: Container(
               padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(32.0),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  StickyHeader(
-                    header: Container(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Text(
-                        "Important Links",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black54,
-                        ),
-                      ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.symmetric(vertical: 4.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
                     ),
-                    content: Container(
-                      margin: EdgeInsets.only(top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              _launched = _launchInWebView(website);
-                            },
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  child: Image(
-                                    width: 100,
-                                    image:
-                                        AssetImage('assets/images/browser.png'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text("Website"),
-                              ],
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              _launched = _launchInWebView(explorer);
-                            },
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  child: Image(
-                                    width: 100,
-                                    image:
-                                        AssetImage('assets/images/compass.png'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text("Explorer"),
-                              ],
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              _launched = _launchInWebView(facebook);
-                            },
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  child: Image(
-                                    width: 100,
-                                    image: AssetImage(
-                                        'assets/images/facebook.png'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text("Facebook"),
-                              ],
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              _launched = _launchInWebView(blog);
-                            },
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: Colors.orange[900],
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Image(
-                                      width: 100,
-                                      image: AssetImage(
-                                          'assets/images/blogger.png'),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text("Blog"),
-                              ],
-                            ),
-                          ),
-                        ],
+                    child: Text(
+                      "Important Links",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width * 0.06,
+                        color: Colors.black54,
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          _launched = _launchInWebView(forum);
-                        },
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.green,
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Image(
-                                  width: 100,
-                                  image: AssetImage('assets/images/forum.png'),
-                                  fit: BoxFit.cover,
+                  Container(
+                    child: GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: impLinks.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 4,
+                        crossAxisSpacing: 4.0,
+                        mainAxisSpacing: 4.0,
+                      ),
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            _launched =
+                                _launchInWebView(impLinks[index]['link']);
+                          },
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage('${impLinks[index]['logo']}'),
+                                backgroundColor: Colors.transparent,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                impLinks[index]['name'],
+                                style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.035,
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("Forum"),
-                          ],
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          _launched = _launchInWebView(github);
-                        },
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.white,
-                              child: Image(
-                                width: 100,
-                                image: AssetImage('assets/images/github.png'),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("Github"),
-                          ],
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          _launched = _launchInWebView(raddit);
-                        },
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              child: Image(
-                                width: 100,
-                                image: AssetImage('assets/images/reddit.png'),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("Raddit"),
-                          ],
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          _launched = _launchInWebView(slack);
-                        },
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.grey[200],
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Image(
-                                  width: 100,
-                                  image: AssetImage('assets/images/slack.png'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("Slack"),
-                          ],
-                        ),
-                      ),
-                    ],
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -757,28 +745,27 @@ Widget cardsBody(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Important Articles",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black54,
+              child: GestureDetector(
+                onTap: () {
+//                  _launched =
+//                      _launchInWebView(guides.);
+                },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Important Articles",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black54,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  title != null
-                      ? Container(
-                          color: Colors.grey[100],
-                          child: Column(
-                            children: <Widget>[carousel],
-                          ),
-                        )
-                      : Container(),
-                ],
+                    SizedBox(
+                      height: 10,
+                    ),
+                    guides != null ? carousel : Container(),
+                  ],
+                ),
               ),
             ),
           ),

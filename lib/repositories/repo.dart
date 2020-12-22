@@ -1,10 +1,12 @@
 import 'package:cointopper/api/api_client.dart';
+import 'package:cointopper/models/allHistoryApi_response_model.dart';
 import 'package:cointopper/models/coinList_response_model.dart';
 import 'package:cointopper/models/coindetail_response_model.dart';
 import 'package:cointopper/models/currencyList_response_model.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
 import 'package:cointopper/models/searchCoin_response_model.dart';
 import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
+import 'package:cointopper/models/weekDayhistoryApi_response_model.dart';
 
 class CoinTopperRepository {
   ApiClient apiClient;
@@ -41,5 +43,15 @@ class CoinTopperRepository {
   // Coin Detail Repo.
   Stream<List<CoinDetailResponseModel>> loadCoinDetailsList(symbol) async* {
     yield* apiClient.fetchCoinDetails(symbol);
+  }
+
+  // Week Day History APi Repo.
+  Stream<List<WeekDayHistoryApiResponseModel>> loadWeekDayHistoryApi(marketId) async* {
+    yield* apiClient.fetchWeekDayHistoryApi(marketId);
+  }
+
+  // All History Api Repo.
+  Stream<List<AllHistoryApiResponseModel>> loadAllHistoryApi(marketId) async* {
+    yield* apiClient.fetchAllHistoryAPi(marketId);
   }
 }
