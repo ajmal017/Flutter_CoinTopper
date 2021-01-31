@@ -16,7 +16,7 @@ class CoinListBloc extends Bloc<CoinListEvent, CoinListState> {
   @override
   Stream<CoinListState> mapEventToState(CoinListEvent event) async* {
     if (event is LoadCoinList) {
-      yield* _mapLoadCoinListState();
+      yield* _mapLoadCoinListState(event.currencyCode, event.offset, event.limit);
     }
     {
       if (event is UpdateCoinList) {
@@ -25,9 +25,9 @@ class CoinListBloc extends Bloc<CoinListEvent, CoinListState> {
     }
   }
 
-  Stream<CoinListState> _mapLoadCoinListState() async* {
+  Stream<CoinListState> _mapLoadCoinListState(String currencyCode, int offset, int limit) async* {
     _coinListSubscription?.cancel();
-    _coinListSubscription = coinTopperRepository.loadCoinList().listen(
+    _coinListSubscription = coinTopperRepository.loadCoinList(currencyCode, offset, limit).listen(
           (list) => add(UpdateCoinList(list)),
         );
   }

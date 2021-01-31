@@ -3,10 +3,14 @@ import 'package:cointopper/models/allHistoryApi_response_model.dart';
 import 'package:cointopper/models/coinList_response_model.dart';
 import 'package:cointopper/models/coindetail_response_model.dart';
 import 'package:cointopper/models/currencyList_response_model.dart';
+import 'package:cointopper/models/featuredNewsList_response_model.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
+import 'package:cointopper/models/newsDetails_response_model.dart';
+import 'package:cointopper/models/newsList_response_model.dart';
 import 'package:cointopper/models/searchCoin_response_model.dart';
+import 'package:cointopper/models/searchNews_response_model.dart';
 import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
-import 'package:cointopper/models/weekDayhistoryApi_response_model.dart';
+import 'package:cointopper/models/weekDayHistoryApi_response_model.dart';
 
 class CoinTopperRepository {
   ApiClient apiClient;
@@ -26,13 +30,14 @@ class CoinTopperRepository {
   }
 
   // TopViewed Coin List Repo or TopSearched Repo.
-  Stream<List<TopViewedCoinListResponseModel>> loadTopViewedCoinList() async* {
-    yield* apiClient.fetchTopViewedCoinList();
+  Stream<List<TopViewedCoinListResponseModel>> loadTopViewedCoinList(
+      String currencyCode) async* {
+    yield* apiClient.fetchTopViewedCoinList(currencyCode);
   }
 
   // Coin List Repo.
-  Stream<List<CoinListResponseModel>> loadCoinList() async* {
-    yield* apiClient.fetchCoinList();
+  Stream<List<CoinListResponseModel>> loadCoinList(String currencyCode, int offset, int limit) async* {
+    yield* apiClient.fetchCoinList(currencyCode, offset, limit);
   }
 
   // Search Coin Repo.
@@ -41,17 +46,40 @@ class CoinTopperRepository {
   }
 
   // Coin Detail Repo.
-  Stream<List<CoinDetailResponseModel>> loadCoinDetailsList(symbol) async* {
-    yield* apiClient.fetchCoinDetails(symbol);
+  Stream<List<CoinDetailResponseModel>> loadCoinDetailsList(
+      String symbol, String currencyCode) async* {
+    yield* apiClient.fetchCoinDetails(symbol, currencyCode);
   }
 
   // Week Day History APi Repo.
-  Stream<List<WeekDayHistoryApiResponseModel>> loadWeekDayHistoryApi(marketId) async* {
+  Stream<List<WeekDayHistoryApiResponseModel>> loadWeekDayHistoryApi(
+      int marketId) async* {
     yield* apiClient.fetchWeekDayHistoryApi(marketId);
   }
 
   // All History Api Repo.
-  Stream<List<AllHistoryApiResponseModel>> loadAllHistoryApi(marketId) async* {
+  Stream<List<AllHistoryApiResponseModel>> loadAllHistoryApi(
+      int marketId) async* {
     yield* apiClient.fetchAllHistoryAPi(marketId);
+  }
+
+  //Featured News List.
+  Stream<List<FeaturedNewsListResponseModel>> loadFeaturedNewsList() async* {
+    yield* apiClient.fetchFeaturedNewsList();
+  }
+
+  //News List.
+  Stream<List<NewsListResponseModel>> loadNewsList() async* {
+    yield* apiClient.fetchNewsList();
+  }
+
+  //Search News List
+  Stream<List<SearchNewsResponseModel>> loadSearchNewsList(keyword) async* {
+    yield* apiClient.fetchSearchNewsList(keyword);
+  }
+
+  //News Details.
+  Stream<List<NewsDetailsResponseModel>> loadNewsDetails(id) async* {
+    yield* apiClient.fetchNewsDetails(id);
   }
 }

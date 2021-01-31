@@ -5,45 +5,45 @@ import 'package:meta/meta.dart';
 class CoinListResponseModel {
   final String color1;
   final String color2;
-  final dynamic percent_change24h;
-  final String last_updated;
+  final dynamic percentChange24h;
+  final String lastUpdated;
   final String logo;
-  final dynamic price_btc;
+  final dynamic priceBTC;
   final dynamic price;
-  final dynamic price_usd;
-  final dynamic volume24h_usd;
-  final dynamic open24_usd;
-  final int available_supply;
-  final dynamic low24_usd;
-  final dynamic high24_usd;
-  final int market_cap_usd;
+  final dynamic priceUSD;
+  final dynamic volume24hUSD;
+  final dynamic open24USD;
+  final dynamic availableSupply;
+  final dynamic low24USD;
+  final dynamic high24USD;
+  final dynamic marketCapUSD;
   final int id;
-  final int volume24h_usd_to;
+  final int volume24hUSDTo;
   final String symbol;
   final String name;
-  final int market_id;
+  final int marketId;
   final String change;
 
   CoinListResponseModel(
     this.color1,
     this.color2,
-    this.percent_change24h,
-    this.last_updated,
+    this.percentChange24h,
+    this.lastUpdated,
     this.logo,
-    this.price_btc,
+    this.priceBTC,
     this.price,
-    this.price_usd,
-    this.volume24h_usd,
-    this.open24_usd,
-    this.available_supply,
-    this.low24_usd,
-    this.high24_usd,
-    this.market_cap_usd,
+    this.priceUSD,
+    this.volume24hUSD,
+    this.open24USD,
+    this.availableSupply,
+    this.low24USD,
+    this.high24USD,
+    this.marketCapUSD,
     this.id,
-    this.volume24h_usd_to,
+    this.volume24hUSDTo,
     this.symbol,
     this.name,
-    this.market_id,
+    this.marketId,
     this.change,
   );
 
@@ -51,23 +51,23 @@ class CoinListResponseModel {
     return CoinListEntity(
       color1,
       color2,
-      percent_change24h,
-      last_updated,
+      percentChange24h,
+      lastUpdated,
       logo,
-      price_btc,
+      priceBTC,
       price,
-      price_usd,
-      volume24h_usd,
-      open24_usd,
-      available_supply,
-      low24_usd,
-      high24_usd,
-      market_cap_usd,
+      priceUSD,
+      volume24hUSD,
+      open24USD,
+      availableSupply,
+      low24USD,
+      high24USD,
+      marketCapUSD,
       id,
-      volume24h_usd_to,
+      volume24hUSDTo,
       symbol,
       name,
-      market_id,
+      marketId,
       change,
     );
   }
@@ -76,23 +76,23 @@ class CoinListResponseModel {
     return CoinListResponseModel(
       entity.color1,
       entity.color2,
-      entity.percent_change24h,
-      entity.last_updated,
+      entity.percentChange24h,
+      entity.lastUpdated,
       entity.logo,
-      entity.price_btc,
+      entity.priceBTC,
       entity.price,
-      entity.price_usd,
-      entity.volume24h_usd,
-      entity.open24_usd,
-      entity.available_supply,
-      entity.low24_usd,
-      entity.high24_usd,
-      entity.market_cap_usd,
+      entity.priceUSD,
+      entity.volume24hUSD,
+      entity.open24USD,
+      entity.availableSupply,
+      entity.low24USD,
+      entity.high24USD,
+      entity.marketCapUSD,
       entity.id,
-      entity.volume24h_usd_to,
+      entity.volume24hUSDTo,
       entity.symbol,
       entity.name,
-      entity.market_id,
+      entity.marketId,
       entity.change,
     );
   }

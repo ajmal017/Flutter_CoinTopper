@@ -1,50 +1,50 @@
-import 'package:cointopper/entities/allHistoryApi.entity.dart';
+import 'package:cointopper/entities/allHistoryApi_entity.dart';
 import 'package:meta/meta.dart';
 
 @immutable
 class AllHistoryApiResponseModel {
-  final int market_cap;
-  final double btc_price;
-  final double price;
-  final String total_supply;
-  final int max_supply;
-  final int volume_24h;
-  final String circulating_supply;
+  final dynamic marketCap;
+  final dynamic btcPrice;
+  final dynamic price;
+  final dynamic totalSupply;
+  final dynamic maxSupply;
+  final dynamic volume24h;
+  final dynamic circulatingSupply;
   final int time;
 
   AllHistoryApiResponseModel(
-    this.market_cap,
-    this.btc_price,
+    this.marketCap,
+    this.btcPrice,
     this.price,
-    this.total_supply,
-    this.max_supply,
-    this.volume_24h,
-    this.circulating_supply,
+    this.totalSupply,
+    this.maxSupply,
+    this.volume24h,
+    this.circulatingSupply,
     this.time,
   );
 
   AllHistoryApiEntity toEntity() {
     return AllHistoryApiEntity(
-      market_cap,
-      btc_price,
+      marketCap,
+      btcPrice,
       price,
-      total_supply,
-      max_supply,
-      volume_24h,
-      circulating_supply,
+      totalSupply,
+      maxSupply,
+      volume24h,
+      circulatingSupply,
       time,
     );
   }
 
   static AllHistoryApiResponseModel fromEntity(AllHistoryApiEntity entity) {
     return AllHistoryApiResponseModel(
-      entity.market_cap,
-      entity.btc_price,
+      entity.marketCap,
+      entity.btcPrice,
       entity.price,
-      entity.total_supply,
-      entity.max_supply,
-      entity.volume_24h,
-      entity.circulating_supply,
+      entity.totalSupply,
+      entity.maxSupply,
+      entity.volume24h,
+      entity.circulatingSupply,
       entity.time,
     );
   }

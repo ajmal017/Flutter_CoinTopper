@@ -8,7 +8,14 @@ abstract class TopViewedCoinListEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadTopViewedCoinList extends TopViewedCoinListEvent {}
+class LoadTopViewedCoinList extends TopViewedCoinListEvent {
+  final String currencyCode;
+
+  const LoadTopViewedCoinList(this.currencyCode);
+
+  @override
+  List<String> get props => [currencyCode];
+}
 
 class UpdateTopViewedCoinList extends TopViewedCoinListEvent {
   final List<TopViewedCoinListResponseModel> topViewedCoinList;

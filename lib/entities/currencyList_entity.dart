@@ -6,34 +6,34 @@ class CurrencyListEntity extends Equatable {
   final String code;
   final String symbol;
   final String format;
-  final String exchange_rate;
+  final String exchangeRate;
   final int active;
-  final String created_at;
-  final String updated_at;
+  final String createdAt;
+  final String updatedAt;
 
   CurrencyListEntity(
-    this.id,
-    this.name,
-    this.code,
-    this.symbol,
-    this.format,
-    this.exchange_rate,
-    this.active,
-    this.created_at,
-    this.updated_at,
+      this.id,
+      this.name,
+      this.code,
+      this.symbol,
+      this.format,
+      this.exchangeRate,
+      this.active,
+      this.createdAt,
+      this.updatedAt,
   );
 
   @override
   List<Object> get props => [
-        id,
-        name,
-        code,
-        symbol,
-        format,
-        exchange_rate,
-        active,
-        created_at,
-        updated_at,
+    id,
+    name,
+    code,
+    symbol,
+    format,
+    exchangeRate,
+    active,
+    createdAt,
+    updatedAt,
       ];
 
   Map<String, Object> toJson() {
@@ -43,10 +43,10 @@ class CurrencyListEntity extends Equatable {
       'code': code,
       'symbol': symbol,
       'format': format,
-      'exchange_rate': exchange_rate,
+      'exchange_rate': exchangeRate,
       'active': active,
-      'created_at': created_at,
-      'updated_at': updated_at,
+      'created_at': createdAt,
+      'updated_at': updatedAt,
     };
   }
 

@@ -2,95 +2,95 @@ import 'package:equatable/equatable.dart';
 
 class TopViewedCoinListEntity extends Equatable {
   final String logo;
-  final dynamic price_btc;
-  final double price;
-  final int open24_usd;
-  final dynamic low24_usd;
-  final double high24_usd;
-  final double price_usd;
-  final int market_cap_usd;
+  final dynamic priceBTC;
+  final dynamic price;
+  final int open24USD;
+  final dynamic low24USD;
+  final dynamic high24USD;
+  final dynamic priceUSD;
+  final dynamic marketCapUSD;
   final int id;
   final String symbol;
   final String name;
-  final double percent_change24h;
-  final int volume24h_usd;
-  final int volume24h_usd_to;
-  final String available_supply;
+  final dynamic percentChange24h;
+  final int volume24hUSD;
+  final int volume24hUSDTo;
+  final String availableSupply;
   final String color1;
   final String color2;
-  final String last_updated;
+  final String lastUpdated;
   final String change;
-  final int market_id;
+  final int marketId;
 
   TopViewedCoinListEntity(
     this.logo,
-    this.price_btc,
+    this.priceBTC,
     this.price,
-    this.open24_usd,
-    this.low24_usd,
-    this.high24_usd,
-    this.price_usd,
-    this.market_cap_usd,
+    this.open24USD,
+    this.low24USD,
+    this.high24USD,
+    this.priceUSD,
+    this.marketCapUSD,
     this.id,
     this.symbol,
     this.name,
-    this.percent_change24h,
-    this.volume24h_usd,
-    this.volume24h_usd_to,
-    this.available_supply,
+    this.percentChange24h,
+    this.volume24hUSD,
+    this.volume24hUSDTo,
+    this.availableSupply,
     this.color1,
     this.color2,
-    this.last_updated,
+    this.lastUpdated,
     this.change,
-    this.market_id,
+    this.marketId,
   );
 
   @override
   List<Object> get props => [
         logo,
-        price_btc,
+        priceBTC,
         price,
-        open24_usd,
-        low24_usd,
-        high24_usd,
-        price_usd,
-        market_cap_usd,
+        open24USD,
+        low24USD,
+        high24USD,
+        priceUSD,
+        marketCapUSD,
         id,
         symbol,
         name,
-        percent_change24h,
-        volume24h_usd,
-        volume24h_usd_to,
-        available_supply,
+        percentChange24h,
+        volume24hUSD,
+        volume24hUSDTo,
+        availableSupply,
         color1,
         color2,
-        last_updated,
+        lastUpdated,
         change,
-        market_id,
+        marketId,
       ];
 
   Map<String, Object> toJson() {
     return {
       'logo': logo,
-      'price_btc': price_btc,
+      'price_btc': priceBTC,
       'price': price,
-      'open24_usd': open24_usd,
-      'low24_usd': low24_usd,
-      'high24_usd': high24_usd,
-      'price_usd': price_usd,
-      'market_cap_usd': market_cap_usd,
+      'open24_usd': open24USD,
+      'low24_usd': low24USD,
+      'high24_usd': high24USD,
+      'price_usd': priceUSD,
+      'market_cap_usd': marketCapUSD,
       'id': id,
       'symbol': symbol,
       'name': name,
-      'percent_change24h': percent_change24h,
-      'volume24h_usd': volume24h_usd,
-      'volume24h_usd_to': volume24h_usd_to,
-      'available_supply': available_supply,
+      'percent_change24h': percentChange24h,
+      'volume24h_usd': volume24hUSD,
+      'volume24h_usd_to': volume24hUSDTo,
+      'available_supply': availableSupply,
       'color1': color1,
       'color2': color2,
-      'last_updated': last_updated,
+      'last_updated': lastUpdated,
       'change': change,
-      'market_id': market_id,
+      'market_id': marketId,
     };
   }
 
@@ -98,16 +98,16 @@ class TopViewedCoinListEntity extends Equatable {
     return TopViewedCoinListEntity(
       json['logo'] as String,
       json['price_btc'] as dynamic,
-      json['price'] as double,
+      json['price'] as dynamic,
       json['open24_usd'] as int,
       json['low24_usd'] as dynamic,
-      json['high24_usd'] as double,
-      json['price_usd'] as double,
-      json['market_cap_usd'] as int,
+      json['high24_usd'] as dynamic,
+      json['price_usd'] as dynamic,
+      json['market_cap_usd'] as dynamic,
       json['id'] as int,
       json['symbol'] as String,
       json['name'] as String,
-      json['percent_change24h'] as double,
+      json['percent_change24h'] as dynamic,
       json['volume24h_usd'] as int,
       json['volume24h_usd_to'] as int,
       json['available_supply'] as String,

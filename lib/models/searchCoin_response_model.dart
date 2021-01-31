@@ -10,7 +10,7 @@ class SearchCoinListResponseModel {
   final String logo;
   final String url;
   final int coinid;
-  final int market_id;
+  final int marketId;
 
   SearchCoinListResponseModel(
     this.value,
@@ -20,7 +20,7 @@ class SearchCoinListResponseModel {
     this.logo,
     this.url,
     this.coinid,
-    this.market_id,
+    this.marketId,
   );
 
   SearchCoinListEntity toEntity() {
@@ -32,7 +32,7 @@ class SearchCoinListResponseModel {
       logo,
       url,
       coinid,
-      market_id,
+      marketId,
     );
   }
 
@@ -45,7 +45,7 @@ class SearchCoinListResponseModel {
       entity.logo,
       entity.url,
       entity.coinid,
-      entity.market_id,
+      entity.marketId,
     );
   }
 }

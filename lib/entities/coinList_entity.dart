@@ -3,45 +3,45 @@ import 'package:equatable/equatable.dart';
 class CoinListEntity extends Equatable {
   final String color1;
   final String color2;
-  final dynamic percent_change24h;
-  final String last_updated;
+  final dynamic percentChange24h;
+  final String lastUpdated;
   final String logo;
-  final dynamic price_btc;
+  final dynamic priceBTC;
   final dynamic price;
-  final dynamic price_usd;
-  final dynamic volume24h_usd;
-  final dynamic open24_usd;
-  final int available_supply;
-  final dynamic low24_usd;
-  final dynamic high24_usd;
-  final int market_cap_usd;
+  final dynamic priceUSD;
+  final dynamic volume24hUSD;
+  final dynamic open24USD;
+  final dynamic availableSupply;
+  final dynamic low24USD;
+  final dynamic high24USD;
+  final dynamic marketCapUSD;
   final int id;
-  final int volume24h_usd_to;
+  final int volume24hUSDTo;
   final String symbol;
   final String name;
-  final int market_id;
+  final int marketId;
   final String change;
 
   CoinListEntity(
     this.color1,
     this.color2,
-    this.percent_change24h,
-    this.last_updated,
+    this.percentChange24h,
+    this.lastUpdated,
     this.logo,
-    this.price_btc,
+    this.priceBTC,
     this.price,
-    this.price_usd,
-    this.volume24h_usd,
-    this.open24_usd,
-    this.available_supply,
-    this.low24_usd,
-    this.high24_usd,
-    this.market_cap_usd,
+    this.priceUSD,
+    this.volume24hUSD,
+    this.open24USD,
+    this.availableSupply,
+    this.low24USD,
+    this.high24USD,
+    this.marketCapUSD,
     this.id,
-    this.volume24h_usd_to,
+    this.volume24hUSDTo,
     this.symbol,
     this.name,
-    this.market_id,
+    this.marketId,
     this.change,
   );
 
@@ -49,23 +49,23 @@ class CoinListEntity extends Equatable {
   List<Object> get props => [
         color1,
         color2,
-        percent_change24h,
-        last_updated,
+        percentChange24h,
+        lastUpdated,
         logo,
-        price_btc,
+        priceBTC,
         price,
-        price_usd,
-        volume24h_usd,
-        open24_usd,
-        available_supply,
-        low24_usd,
-        high24_usd,
-        market_cap_usd,
+        priceUSD,
+        volume24hUSD,
+        open24USD,
+        availableSupply,
+        low24USD,
+        high24USD,
+        marketCapUSD,
         id,
-        volume24h_usd_to,
+        volume24hUSDTo,
         symbol,
         name,
-        market_id,
+        marketId,
         change,
       ];
 
@@ -73,23 +73,23 @@ class CoinListEntity extends Equatable {
     return {
       'color1': color1,
       'color2': color2,
-      'percent_change24h': percent_change24h,
-      'last_updated': last_updated,
+      'percent_change24h': percentChange24h,
+      'last_updated': lastUpdated,
       'logo': logo,
-      'price_btc': price_btc,
+      'price_btc': priceBTC,
       'price': price,
-      'price_usd': price_usd,
-      'volume24h_usd': volume24h_usd,
-      'open24_usd': open24_usd,
-      'available_supply': available_supply,
-      'low24_usd': low24_usd,
-      'high24_usd': high24_usd,
-      'market_cap_usd': market_cap_usd,
+      'price_usd': priceUSD,
+      'volume24h_usd': volume24hUSD,
+      'open24_usd': open24USD,
+      'available_supply': availableSupply,
+      'low24_usd': low24USD,
+      'high24_usd': high24USD,
+      'market_cap_usd': marketCapUSD,
       'id': id,
-      'volume24h_usd_to': volume24h_usd_to,
+      'volume24h_usd_to': volume24hUSDTo,
       'symbol': symbol,
       'name': name,
-      'market_id': market_id,
+      'market_id': marketId,
       'change': change,
     };
   }
@@ -106,10 +106,10 @@ class CoinListEntity extends Equatable {
       json['price_usd'] as dynamic,
       json['volume24h_usd'] as dynamic,
       json['open24_usd'] as dynamic,
-      json['available_supply'] as int,
+      json['available_supply'] as dynamic,
       json['low24_usd'] as dynamic,
       json['high24_usd'] as dynamic,
-      json['market_cap_usd'] as int,
+      json['market_cap_usd'] as dynamic,
       json['id'] as int,
       json['volume24h_usd_to'] as int,
       json['symbol'] as String,

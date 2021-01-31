@@ -10,11 +10,12 @@ abstract class CoinDetailEvent extends Equatable {
 
 class LoadCoinDetail extends CoinDetailEvent {
   final String symbol;
+  final String currencyCode;
 
-  const LoadCoinDetail(this.symbol);
+  const LoadCoinDetail(this.symbol, this.currencyCode);
 
   @override
-  List<String> get props => [symbol];
+  List<String> get props => [symbol, currencyCode];
 }
 
 class UpdateCoinDetail extends CoinDetailEvent {

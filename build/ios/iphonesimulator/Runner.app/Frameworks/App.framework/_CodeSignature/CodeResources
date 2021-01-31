@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		Mw+7I1/7EWJs8RW+yL8n+J9hyEc=
+		rFuXylL0WLBoITt7I4P+ijoucM4=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,19 +18,11 @@
 		</data>
 		<key>flutter_assets/NOTICES</key>
 		<data>
-		jAKkqmonq02Bw4E6BJ9/0F6XaaE=
+		gADEMsxm+Zg75Tf3Axp7Haa2KX0=
 		</data>
 		<key>flutter_assets/assets/images/.DS_Store</key>
 		<data>
 		3y++sUAKzaCQmjLBz2v0kvESHgc=
-		</data>
-		<key>flutter_assets/assets/images/Cancle%20_Ticket_Recipt.pdf</key>
-		<data>
-		QdagxPbKWc8a9tOzEHX4ZYhCCzU=
-		</data>
-		<key>flutter_assets/assets/images/asba.txt</key>
-		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
 		<key>flutter_assets/assets/images/bitcoin-cash-bch.jpg</key>
 		<data>
@@ -75,6 +67,10 @@
 		<key>flutter_assets/assets/images/github.png</key>
 		<data>
 		OfP5HLjQ/o/7hwyLbbztOt0FupQ=
+		</data>
+		<key>flutter_assets/assets/images/logo.png</key>
+		<data>
+		6OHaKAIs+eQGcCRA/zsg0/kcpUo=
 		</data>
 		<key>flutter_assets/assets/images/ltc.png</key>
 		<data>
@@ -130,7 +126,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		zJK9S3jSg88kMf9sxaNJGPtjrNI=
+		ACTjbzokKgnWN2ueQtlJ4ZPIixs=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -171,11 +167,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Mw+7I1/7EWJs8RW+yL8n+J9hyEc=
+			rFuXylL0WLBoITt7I4P+ijoucM4=
 			</data>
 			<key>hash2</key>
 			<data>
-			y3mNJem9VMmQQjRyTfDYDZM3nCdCtN2DxvZXjKhYfeU=
+			2gZoIidAJVN253tg/35fLlinZvsWMRDrfxOduCMo71E=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -193,33 +189,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jAKkqmonq02Bw4E6BJ9/0F6XaaE=
+			gADEMsxm+Zg75Tf3Axp7Haa2KX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			m2a6yPGhkeie5BRK31vU4LJ2K9qQw0EdkLBJJLYGKVQ=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/Cancle%20_Ticket_Recipt.pdf</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			QdagxPbKWc8a9tOzEHX4ZYhCCzU=
-			</data>
-			<key>hash2</key>
-			<data>
-			G4fCIWlOunFrmjEwAB1QR+gxhQT5hoI9Qqeg6+NoVcw=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/asba.txt</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-			</data>
-			<key>hash2</key>
-			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			9I6r5hsksWloEGoxXZOnX6Yilfgnwj+kR1zRaiy3jKQ=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/bitcoin-cash-bch.jpg</key>
@@ -341,6 +315,17 @@
 			<key>hash2</key>
 			<data>
 			2a5T+Iv7yE+T95K8GcdtbQYQDuv+Nt1acBtzmU8nCJ8=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/logo.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6OHaKAIs+eQGcCRA/zsg0/kcpUo=
+			</data>
+			<key>hash2</key>
+			<data>
+			cyM58JzTP+Lljf4RguqcdLn+QK8kxs7zzkFDjmKaT20=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/ltc.png</key>
@@ -490,11 +475,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zJK9S3jSg88kMf9sxaNJGPtjrNI=
+			ACTjbzokKgnWN2ueQtlJ4ZPIixs=
 			</data>
 			<key>hash2</key>
 			<data>
-			wToLJBlEWIChzku201OKsSjHaa0uRVUZ2KaZ5enia7k=
+			W/uWtb1XnS+mNqvnXXhyee7eYIpSq0donVYyiIyWPu4=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

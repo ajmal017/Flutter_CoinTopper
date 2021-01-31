@@ -18,16 +18,16 @@ class TopViewedCoinListBloc
   Stream<TopViewedCoinListState> mapEventToState(
       TopViewedCoinListEvent event) async* {
     if (event is LoadTopViewedCoinList) {
-      yield* _mapLoadTopCoinsListState();
+      yield* _mapLoadTopCoinsListState(event.currencyCode);
     }
     if (event is UpdateTopViewedCoinList) {
       yield* _mapUpdateTopCoinsListState(event);
     }
   }
 
-  Stream<TopViewedCoinListState> _mapLoadTopCoinsListState() async* {
+  Stream<TopViewedCoinListState> _mapLoadTopCoinsListState(String currencyCode) async* {
     _coinSubscription?.cancel();
-    _coinSubscription = coinRepository.loadTopViewedCoinList().listen(
+    _coinSubscription = coinRepository.loadTopViewedCoinList(currencyCode).listen(
           (list) => add(UpdateTopViewedCoinList(list)),
         );
   }

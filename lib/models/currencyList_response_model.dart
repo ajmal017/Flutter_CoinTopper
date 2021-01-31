@@ -8,10 +8,10 @@ class CurrencyListResponseModel {
   final String code;
   final String symbol;
   final String format;
-  final String exchange_rate;
+  final String exchangeRate;
   final int active;
-  final String created_at;
-  final String updated_at;
+  final String createdAt;
+  final String updatedAt;
 
   CurrencyListResponseModel(
     this.id,
@@ -19,10 +19,10 @@ class CurrencyListResponseModel {
     this.code,
     this.symbol,
     this.format,
-    this.exchange_rate,
+    this.exchangeRate,
     this.active,
-    this.created_at,
-    this.updated_at,
+    this.createdAt,
+    this.updatedAt,
   );
 
   CurrencyListEntity toEntity() {
@@ -32,10 +32,10 @@ class CurrencyListResponseModel {
       code,
       symbol,
       format,
-      exchange_rate,
+      exchangeRate,
       active,
-      created_at,
-      updated_at,
+      createdAt,
+      updatedAt,
     );
   }
 
@@ -46,10 +46,10 @@ class CurrencyListResponseModel {
       entity.code,
       entity.symbol,
       entity.format,
-      entity.exchange_rate,
+      entity.exchangeRate,
       entity.active,
-      entity.created_at,
-      entity.updated_at,
+      entity.createdAt,
+      entity.updatedAt,
     );
   }
 }

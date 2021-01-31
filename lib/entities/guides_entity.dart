@@ -2,47 +2,47 @@ import 'package:equatable/equatable.dart';
 
 class GuidesEntity extends Equatable {
   final int id;
-  final String title_en;
+  final String titleEN;
   final String date;
-  final String post_link;
-  final String photo_file;
+  final String postLink;
+  final String photoFile;
   final int visits;
-  final String seo_description_en;
-  final String created_at;
+  final String seoDescriptionEN;
+  final String createdAt;
 
   GuidesEntity(
     this.id,
-    this.title_en,
+    this.titleEN,
     this.date,
-    this.post_link,
-    this.photo_file,
+    this.postLink,
+    this.photoFile,
     this.visits,
-    this.seo_description_en,
-    this.created_at,
+    this.seoDescriptionEN,
+    this.createdAt,
   );
 
   @override
   List<Object> get props => [
         id,
-        title_en,
+        titleEN,
         date,
-        post_link,
-        photo_file,
+        postLink,
+        photoFile,
         visits,
-        seo_description_en,
-        created_at,
+        seoDescriptionEN,
+        createdAt,
       ];
 
   Map<String, Object> toJson() {
     return {
       "id": id,
-      "title_en": title_en,
+      "title_en": titleEN,
       "date": date,
-      "post_link": post_link,
-      "photo_file": photo_file,
+      "post_link": postLink,
+      "photo_file": photoFile,
       "visits": visits,
-      "seo_description_en": seo_description_en,
-      "created_at": created_at,
+      "seo_description_en": seoDescriptionEN,
+      "created_at": createdAt,
     };
   }
 

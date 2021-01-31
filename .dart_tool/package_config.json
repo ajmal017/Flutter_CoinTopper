@@ -98,6 +98,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "fl_chart",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fl_chart-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -134,6 +140,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "flutter_webview_plugin",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.3.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "font_awesome_flutter",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-8.10.1",
       "packageUri": "lib/",
@@ -156,6 +168,18 @@
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.3"
+    },
+    {
+      "name": "image_picker_saver",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_saver-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "infinite_scroll_pagination",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/infinite_scroll_pagination-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "intl",
@@ -200,6 +224,18 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "path_drawing",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-0.4.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-0.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
       "name": "pedantic",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
       "packageUri": "lib/",
@@ -228,6 +264,12 @@
       "rootUri": "file:///Users/codecrunch/Developer/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "1.11"
+    },
+    {
+      "name": "sliver_tools",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/sliver_tools-0.1.10+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "source_span",
@@ -326,6 +368,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "webview_flutter",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-1.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "youtube_player_flutter",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player_flutter-7.0.0+7",
       "packageUri": "lib/",
@@ -338,7 +386,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-12-16T03:12:18.348117Z",
+  "generated": "2021-01-30T14:47:21.356924Z",
   "generator": "pub",
-  "generatorVersion": "2.10.4"
+  "generatorVersion": "2.10.5"
 }

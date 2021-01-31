@@ -8,7 +8,16 @@ abstract class CoinListEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadCoinList extends CoinListEvent {}
+class LoadCoinList extends CoinListEvent {
+  final String currencyCode;
+  final int offset;
+  final int limit;
+
+  const LoadCoinList(this.currencyCode, this.offset, this.limit);
+
+  @override
+  List<String> get props => [currencyCode];
+}
 
 class UpdateCoinList extends CoinListEvent {
   final List<CoinListResponseModel> coinList;

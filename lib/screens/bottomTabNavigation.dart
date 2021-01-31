@@ -1,9 +1,9 @@
 //import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:cointopper/screens/account.screen.dart';
-import 'package:cointopper/screens/airdrop.screen.dart';
-import 'package:cointopper/screens/dashboard.dart';
-import 'package:cointopper/screens/ipos.screen.dart';
-import 'package:cointopper/screens/news.screen.dart';
+import 'package:cointopper/screens/account_screen.dart';
+import 'package:cointopper/screens/airdrop_screen.dart';
+import 'package:cointopper/screens/dashboard_screen.dart';
+import 'package:cointopper/screens/ipos_screen.dart';
+import 'package:cointopper/screens/news_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomTabNavigationPage extends StatefulWidget {
@@ -82,60 +82,40 @@ class _BottomTabNavigationPageState extends State<BottomTabNavigationPage> {
         selectedItemColor: Colors.deepPurple,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.grey,
-              ),
-              title: Text(
-                'Home',
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              )),
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.donut_large,
-                color: Colors.grey,
-              ),
-              title: Text(
-                'IPOs',
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              )),
+            icon: Icon(
+              Icons.donut_large,
+              color: Colors.grey,
+            ),
+            label: 'IPOs',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.local_airport,
-                color: Colors.grey,
-              ),
-              title: Text(
-                'AirDrops',
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              )),
+            icon: Icon(
+              Icons.local_airport,
+              color: Colors.grey,
+            ),
+            label: 'AirDrops',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.web,
-                color: Colors.grey,
-              ),
-              title: Text(
-                'News',
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              )),
+            icon: Icon(
+              Icons.web,
+              color: Colors.grey,
+            ),
+            label: 'News',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-                color: Colors.grey,
-              ),
-              title: Text(
-                'Account',
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              )),
+            icon: Icon(
+              Icons.account_circle,
+              color: Colors.grey,
+            ),
+            label: 'Account',
+          ),
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,

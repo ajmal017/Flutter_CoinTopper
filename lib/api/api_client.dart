@@ -1,21 +1,29 @@
 import 'dart:convert';
 
-import 'package:cointopper/entities/allHistoryApi.entity.dart';
+import 'package:cointopper/entities/allHistoryApi_entity.dart';
 import 'package:cointopper/entities/coinDetail_entity.dart';
 import 'package:cointopper/entities/coinList_entity.dart';
 import 'package:cointopper/entities/currencyList_entity.dart';
+import 'package:cointopper/entities/featuredNewsList_entity.dart';
 import 'package:cointopper/entities/globalDataCoin_data_entity.dart';
+import 'package:cointopper/entities/newsDetails_entity.dart';
+import 'package:cointopper/entities/newsList_entity.dart';
 import 'package:cointopper/entities/searchCoin_entity.dart';
+import 'package:cointopper/entities/searchNews_entity.dart';
 import 'package:cointopper/entities/topViewedCoinList_data_entity.dart';
-import 'package:cointopper/entities/weekDayHistoryApi.entity.dart';
+import 'package:cointopper/entities/weekDayHistoryApi_entity.dart';
 import 'package:cointopper/models/allHistoryApi_response_model.dart';
 import 'package:cointopper/models/coinList_response_model.dart';
 import 'package:cointopper/models/coindetail_response_model.dart';
 import 'package:cointopper/models/currencyList_response_model.dart';
+import 'package:cointopper/models/featuredNewsList_response_model.dart';
 import 'package:cointopper/models/globalDataCoin_response_model.dart';
+import 'package:cointopper/models/newsDetails_response_model.dart';
+import 'package:cointopper/models/newsList_response_model.dart';
 import 'package:cointopper/models/searchCoin_response_model.dart';
+import 'package:cointopper/models/searchNews_response_model.dart';
 import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
-import 'package:cointopper/models/weekDayhistoryApi_response_model.dart';
+import 'package:cointopper/models/weekDayHistoryApi_response_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiClient {
@@ -67,15 +75,15 @@ class ApiClient {
   }
 
   // TopViewed Coin List API or TopSearched API.
-  Stream<List<TopViewedCoinListResponseModel>> fetchTopViewedCoinList() async* {
+  Stream<List<TopViewedCoinListResponseModel>> fetchTopViewedCoinList(
+      String currencyCode) async* {
     final response = await httpClient.get(
-      Uri.encodeFull('${this.baseUrl + "topsearched"}'),
+      Uri.encodeFull('${this.baseUrl + "topsearched?currency=$currencyCode"}'),
       headers: header,
     );
 
     Map<String, dynamic> map = json.decode(response.body);
     List<dynamic> results = map["data"];
-
     yield results
         .map((dynamic item) => TopViewedCoinListResponseModel.fromEntity(
             TopViewedCoinListEntity.fromJson(item as Map<String, dynamic>)))
@@ -83,9 +91,15 @@ class ApiClient {
   }
 
   // Coin List API.
-  Stream<List<CoinListResponseModel>> fetchCoinList() async* {
+  Stream<List<CoinListResponseModel>> fetchCoinList(
+      String currencyCode, int offset, int limit) async* {
+    print('coin list api ==>>');
+    print('Limit ==>> $limit');
+    print('currencyCode ==>> $currencyCode');
+    print('offset ==>> $offset');
     final response = await httpClient.get(
-      Uri.encodeFull('${this.baseUrl + "ticker?offset=0&limit=20"}'),
+      Uri.encodeFull(
+          '${this.baseUrl + "ticker?offset=$offset&limit=$limit&currency=$currencyCode"}'),
       headers: header,
     );
 
@@ -107,6 +121,7 @@ class ApiClient {
 
     Map<String, dynamic> map = json.decode(response.body);
     List<dynamic> results = map["data"];
+
     yield results
         .map((dynamic item) => SearchCoinListResponseModel.fromEntity(
             SearchCoinListEntity.fromJson(item as Map<String, dynamic>)))
@@ -114,15 +129,18 @@ class ApiClient {
   }
 
   // Coin Detail API.
-  Stream<List<CoinDetailResponseModel>> fetchCoinDetails(String symbol) async* {
+  Stream<List<CoinDetailResponseModel>> fetchCoinDetails(
+      String symbol, String currencyCode) async* {
     final response = await httpClient.get(
-      Uri.encodeFull('${this.baseUrl + "ticker/" + "$symbol"}'),
+      Uri.encodeFull(
+          '${this.baseUrl + "ticker/$symbol?currency=$currencyCode"}'),
       headers: header,
     );
     var convertInArray = [];
     Map<String, dynamic> map = json.decode(response.body);
-    var result = map['data'];
-    convertInArray.add(result);
+    var results = map['data'];
+
+    convertInArray.add(results);
     yield convertInArray
         .map((dynamic item) => CoinDetailResponseModel.fromEntity(
             CoinDetailEntity.fromJson(item as Map<String, dynamic>)))
@@ -136,13 +154,15 @@ class ApiClient {
       Uri.encodeFull("https://graph.cointopper.com/historyweekhours/$marketId"),
       headers: header,
     );
-    var convertInArray = [];
+//    List<dynamic> convertInArray = [];
     Map<String, dynamic> map = json.decode(response.body);
     var result = map['data'];
-    convertInArray.add(result);
-    yield convertInArray
-        .map((dynamic item) => WeekDayHistoryApiResponseModel.fromEntity(
-            WeekDayHistoryApiEntity.fromJson(item as Map<String, dynamic>)))
+//    convertInArray.add(result);
+//    yield convertInArray
+    yield result
+        .map<WeekDayHistoryApiResponseModel>((item) =>
+            WeekDayHistoryApiResponseModel.fromEntity(
+                WeekDayHistoryApiEntity.fromJson(item as Map<String, dynamic>)))
         .toList();
   }
 
@@ -153,13 +173,82 @@ class ApiClient {
       Uri.encodeFull("https://graph.cointopper.com/history/$marketId"),
       headers: header,
     );
-    var convertInArray = [];
+//    var convertInArray = [];
     Map<String, dynamic> map = json.decode(response.body);
     var result = map['data'];
-    convertInArray.add(result);
+//    convertInArray.add(result);
+//    yield convertInArray
+    yield result
+        .map<AllHistoryApiResponseModel>((dynamic item) =>
+            AllHistoryApiResponseModel.fromEntity(
+                AllHistoryApiEntity.fromJson(item as Map<String, dynamic>)))
+        .toList();
+  }
+
+  //Featured News List.
+  Stream<List<FeaturedNewsListResponseModel>> fetchFeaturedNewsList() async* {
+    final response = await httpClient
+        .get(Uri.encodeFull('${this.baseUrl + "featured"}'), headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+    });
+
+    Map<String, dynamic> map = json.decode(response.body);
+    List<dynamic> results = map["data"];
+    yield results
+        .map((dynamic item) => FeaturedNewsListResponseModel.fromEntity(
+            FeaturedNewsListEntity.fromJson(item as Map<String, dynamic>)))
+        .toList();
+  }
+
+  //News List.
+  Stream<List<NewsListResponseModel>> fetchNewsList() async* {
+    final response = await httpClient
+        .get(Uri.encodeFull('${this.baseUrl + "news"}'), headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+    });
+
+    Map<String, dynamic> map = json.decode(response.body);
+    List<dynamic> results = map["data"];
+    yield results
+        .map((dynamic item) => NewsListResponseModel.fromEntity(
+            NewsListEntity.fromJson(item as Map<String, dynamic>)))
+        .toList();
+  }
+
+  //Search News List
+  Stream<List<SearchNewsResponseModel>> fetchSearchNewsList(
+      String keyword) async* {
+    final response = await httpClient.get(
+        Uri.encodeFull('${this.baseUrl + "search/news?keyword=" + "$keyword"}'),
+        headers: {
+          'Content-type': 'application/json',
+          'Accept': 'application/json'
+        });
+
+    Map<String, dynamic> map = json.decode(response.body);
+    List<dynamic> results = map["data"];
+    yield results
+        .map((dynamic item) => SearchNewsResponseModel.fromEntity(
+            SearchNewsEntity.fromJson(item as Map<String, dynamic>)))
+        .toList();
+  }
+
+  //News Details.
+  Stream<List<NewsDetailsResponseModel>> fetchNewsDetails(int id) async* {
+    final response = await httpClient
+        .get(Uri.encodeFull('${this.baseUrl + "news/" + "$id"}'), headers: {
+      'Content-type': 'application/json',
+      'Accept': 'application/json'
+    });
+    var convertInArray = [];
+    Map<String, dynamic> map = json.decode(response.body);
+    var results = map["data"];
+    convertInArray.add(results);
     yield convertInArray
-        .map((dynamic item) => AllHistoryApiResponseModel.fromEntity(
-            AllHistoryApiEntity.fromJson(item as Map<String, dynamic>)))
+        .map<NewsDetailsResponseModel>((dynamic item) => NewsDetailsResponseModel.fromEntity(
+            NewsDetailsEntity.fromJson(item as Map<String, dynamic>)))
         .toList();
   }
 }
