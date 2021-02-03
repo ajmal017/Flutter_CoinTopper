@@ -139,13 +139,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0+4"
-  flutter_keyboard_visibility:
-    dependency: transitive
-    description:
-      name: flutter_keyboard_visibility
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -289,13 +282,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.3.2+3"
-  search_widget:
+  readmore:
     dependency: "direct main"
     description:
-      name: search_widget
+      name: readmore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -322,13 +315,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0-nullsafety.1"
-  sticky_headers:
-    dependency: "direct main"
-    description:
-      name: sticky_headers
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.8+1"
   stream_channel:
     dependency: transitive
     description:

@@ -53,7 +53,8 @@ class _CoinCardWidgetState extends State<CoinCardWidget> {
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (_) => TopViewedCoinViewAllScreen(
-                                      widget.currencyCode, widget.currencySymbol)));
+                                      widget.currencyCode,
+                                      widget.currencySymbol)));
                             },
                             child: Card(
                               elevation: 3,
@@ -140,8 +141,10 @@ Widget _cardSlider(
   ).format(price);
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => CoinDetail(symbol, currencyCode, currencySymbol)));
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(
+              builder: (_) => CoinDetail(symbol, currencyCode, currencySymbol)),
+          ModalRoute.withName("/Home"));
     },
     child: Card(
       elevation: 3,

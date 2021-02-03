@@ -148,32 +148,22 @@ class GraphWidget extends StatefulWidget {
   final int marketId;
   final String color1;
   final String color2;
+  final bool leftSizeShowTitles;
+  final bool bottomSideShowTitles;
 
   GraphWidget(
     this.marketId,
     this.color1,
     this.color2,
+    this.leftSizeShowTitles,
+    this.bottomSideShowTitles,
   );
 
   @override
-  _GraphWidgetState createState() => _GraphWidgetState(
-        this.marketId,
-        this.color1,
-        this.color2,
-      );
+  _GraphWidgetState createState() => _GraphWidgetState();
 }
 
 class _GraphWidgetState extends State<GraphWidget> {
-  final int marketId;
-  final String color1;
-  final String color2;
-
-  _GraphWidgetState(
-    this.marketId,
-    this.color1,
-    this.color2,
-  );
-
   final int _leftLabelsCount = 7;
 
   List<FlSpot> _values = const [];
@@ -208,9 +198,9 @@ class _GraphWidgetState extends State<GraphWidget> {
 
   LineChartBarData _lineBarData() {
     List<Color> _gradientColors = [
-      HexColor(color1),
-      HexColor(color1),
-      HexColor(color2),
+      HexColor(widget.color1),
+      HexColor(widget.color1),
+      HexColor(widget.color2),
     ];
     return LineChartBarData(
       spots: _values,
@@ -233,7 +223,7 @@ class _GraphWidgetState extends State<GraphWidget> {
 
   SideTitles _leftTitles() {
     return SideTitles(
-      showTitles: true,
+      showTitles: widget.leftSizeShowTitles,
       getTitles: (value) =>
           NumberFormat.compactCurrency(symbol: '\$').format(value),
       reservedSize: 28,
@@ -244,7 +234,7 @@ class _GraphWidgetState extends State<GraphWidget> {
 
   SideTitles _bottomTitles() {
     return SideTitles(
-      showTitles: true,
+      showTitles: widget.bottomSideShowTitles,
       getTitles: (value) {
         final DateTime date =
             DateTime.fromMillisecondsSinceEpoch(value.toInt());
@@ -279,15 +269,9 @@ class _GraphWidgetState extends State<GraphWidget> {
         .add(LoadAllHistory(widget.marketId));
     return BlocBuilder<AllHistoryBloc, AllHistoryState>(
       builder: (context, state) {
-//        print("Graph data bloc==>>$state");
         if (state is AllHistoryLoadSuccess) {
-//          print("Graph data state ==>>$state");
           var data = state.allHistory;
-//          print("Graph data jjj ==>$data");
           _values = data.map((datum) {
-//            print('price ==>> ');
-//            print(datum.price);
-//            print(datum.time);
             if (minY > datum.price) minY = datum.price;
             if (maxY < datum.price) maxY = datum.price;
             return FlSpot(
@@ -302,17 +286,10 @@ class _GraphWidgetState extends State<GraphWidget> {
           _maxY = maxY.ceilToDouble();
           _leftTitlesInterval =
               ((_maxY - _minY) / (_leftLabelsCount - 1)).floorToDouble();
-          return AspectRatio(
-            aspectRatio: 1.70,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                right: 18.0,
-                left: 12.0,
-                top: 24,
-                bottom: 12,
-              ),
-              child: _values.isEmpty ? Placeholder() : LineChart(_mainData()),
-            ),
+          return Container(
+            height: MediaQuery.of(context).size.height * 0.3,
+            width: MediaQuery.of(context).size.width,
+            child: _values.isEmpty ? Placeholder() : LineChart(_mainData()),
           );
         } else {
           return Center(

@@ -22,8 +22,7 @@ dependencies:
   image_picker_saver: ^0.3.0
   infinite_scroll_pagination: ^2.3.0
   intl: ^0.16.1
-  search_widget: ^1.0.2
-  sticky_headers: ^0.1.8+1
+  readmore: ^1.0.1
   url_launcher: ^5.7.10
   webview_flutter: ^1.0.7
   youtube_player_flutter: ^7.0.0+7

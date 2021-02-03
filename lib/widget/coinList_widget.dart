@@ -44,7 +44,6 @@ class _CoinListWidgetState extends State<CoinListWidget> {
   bool isSort = true;
   bool isSortChange = true;
   bool isSortPrice = true;
-  String code;
 
   int page = -10;
   ScrollController controller;
@@ -56,11 +55,8 @@ class _CoinListWidgetState extends State<CoinListWidget> {
 
   @override
   void initState() {
-//    _pagingController.addPageRequestListener((pageKey) {
-//      _fetchPage(pageKey);
-//    });
-    setState(() {
-      code = widget.currencyCode;
+    _pagingController.addPageRequestListener((pageKey) {
+      _fetchPage(pageKey);
     });
     super.initState();
   }
@@ -73,7 +69,8 @@ class _CoinListWidgetState extends State<CoinListWidget> {
 
   Future<void> _fetchPage(int pageKey) async {
     try {
-      final newItems = await fetchCoinList(code, pageKey, _pageSize).single;
+      final newItems =
+          await fetchCoinList(widget.currencyCode, pageKey, _pageSize).single;
       final isLastPage = newItems.length < _pageSize;
       if (isLastPage) {
         _pagingController.appendLastPage(newItems);
