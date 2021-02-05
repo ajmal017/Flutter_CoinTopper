@@ -141,10 +141,8 @@ Widget _cardSlider(
   ).format(price);
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(
-              builder: (_) => CoinDetail(symbol, currencyCode, currencySymbol)),
-          ModalRoute.withName("/Home"));
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => CoinDetail(symbol, currencyCode, currencySymbol)));
     },
     child: Card(
       elevation: 3,
