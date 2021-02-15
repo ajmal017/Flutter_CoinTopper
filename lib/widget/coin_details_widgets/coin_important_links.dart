@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class MyInAppBrowser extends InAppBrowser {
   @override
@@ -147,18 +147,18 @@ class _CoinImportantLinksState extends State<CoinImportantLinks> {
       },
     ];
 
-    Future<void> _launchInWebView(String url) async {
-      if (await canLaunch(url)) {
-        await launch(
-          url,
-          forceSafariVC: true,
-          forceWebView: true,
-          enableJavaScript: true,
-        );
-      } else {
-        throw 'Could not launch $url';
-      }
-    }
+    // Future<void> _launchInWebView(String url) async {
+    //   if (await canLaunch(url)) {
+    //     await launch(
+    //       url,
+    //       forceSafariVC: true,
+    //       forceWebView: true,
+    //       enableJavaScript: true,
+    //     );
+    //   } else {
+    //     throw 'Could not launch $url';
+    //   }
+    // }
 
     return Container(
       child: GridView.builder(

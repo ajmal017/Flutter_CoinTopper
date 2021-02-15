@@ -1,32 +1,31 @@
-import 'package:cointopper/bloc/allHistoryBloc/allHistory_bloc.dart';
-import 'package:cointopper/bloc/allHistoryBloc/allHistory_event.dart';
-import 'package:cointopper/bloc/coinDetailBloc/coinDetail_bloc.dart';
-import 'package:cointopper/bloc/coinDetailBloc/coinDetail_event.dart';
-import 'package:cointopper/bloc/coinListBloc/coinList_bloc.dart';
-import 'package:cointopper/bloc/coinListBloc/coinList_event.dart';
-import 'package:cointopper/bloc/currencyListBloc/currencyList_bloc.dart';
-import 'package:cointopper/bloc/currencyListBloc/currencyList_event.dart';
-import 'package:cointopper/bloc/dashboardBloc/dashboard_bloc.dart';
-import 'package:cointopper/bloc/dashboardBloc/dashboard_event.dart';
-import 'package:cointopper/bloc/searchCoinBloc/searchCoinList_bloc.dart';
-import 'package:cointopper/bloc/searchCoinBloc/searchCoinList_event.dart';
-import 'package:cointopper/bloc/topViewCoinListBloc/topViewedCoinList_bloc.dart';
-import 'package:cointopper/bloc/weekDayHistoryBloc/weekDayHistory_bloc.dart';
-import 'package:cointopper/bloc/weekDayHistoryBloc/weekDayHistory_event.dart';
+import 'package:cointopper/bloc/all_history_bloc/all_history_bloc.dart';
+import 'package:cointopper/bloc/all_history_bloc/all_history_event.dart';
+import 'package:cointopper/bloc/coin_detail_bloc/coin_detail_bloc.dart';
+import 'package:cointopper/bloc/coin_detail_bloc/coin_detail_event.dart';
+import 'package:cointopper/bloc/coin_list_bloc/coin_list_bloc.dart';
+import 'package:cointopper/bloc/coin_list_bloc/coin_list_event.dart';
+import 'package:cointopper/bloc/currency_list_bloc/currency_list_bloc.dart';
+import 'package:cointopper/bloc/currency_list_bloc/currency_list_event.dart';
+import 'package:cointopper/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:cointopper/bloc/dashboard_bloc/dashboard_event.dart';
+import 'package:cointopper/bloc/featured_news_bloc/featured_news_bloc.dart';
+import 'package:cointopper/bloc/featured_news_bloc/featured_news_event.dart';
+import 'package:cointopper/bloc/news_details_bloc/news_details_bloc.dart';
+import 'package:cointopper/bloc/news_details_bloc/news_details_event.dart';
+import 'package:cointopper/bloc/news_list_bloc/news_list_bloc.dart';
+import 'package:cointopper/bloc/news_list_bloc/news_list_event.dart';
+import 'package:cointopper/bloc/news_search_bloc/news_search_bloc.dart';
+import 'package:cointopper/bloc/news_search_bloc/news_search_event.dart';
+import 'package:cointopper/bloc/search_coin_bloc/searchCoinList_event.dart';
+import 'package:cointopper/bloc/search_coin_bloc/search_coin_list_bloc.dart';
+import 'package:cointopper/bloc/top_view_coin_list_bloc/top_viewed_coin_list_bloc.dart';
+import 'package:cointopper/bloc/top_view_coin_list_bloc/top_viewed_coin_list_event.dart';
+import 'package:cointopper/bloc/week_day_history_bloc/week_day_history_bloc.dart';
+import 'package:cointopper/bloc/week_day_history_bloc/week_day_history_event.dart';
 import 'package:cointopper/repositories/repo.dart';
-import 'package:cointopper/screens/bottomTabNavigation.dart';
+import 'package:cointopper/screens/bottom_tab_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'bloc/featured_news_bloc/featured_news_bloc.dart';
-import 'bloc/featured_news_bloc/featured_news_event.dart';
-import 'bloc/news_details_bloc/news_details_bloc.dart';
-import 'bloc/news_details_bloc/news_details_event.dart';
-import 'bloc/news_list_bloc/news_list_bloc.dart';
-import 'bloc/news_list_bloc/news_list_event.dart';
-import 'bloc/news_search_bloc/news_search_bloc.dart';
-import 'bloc/news_search_bloc/news_search_event.dart';
-import 'bloc/topViewCoinListBloc/topViewedCoinList_event.dart';
 
 void main() {
   runApp(MultiBlocProvider(

@@ -2,8 +2,6 @@ PODS:
   - Flutter (1.0.0)
   - flutter_inappwebview (0.0.1):
     - Flutter
-  - flutter_keyboard_visibility (0.7.0):
-    - Flutter
   - flutter_webview_plugin (0.0.1):
     - Flutter
   - hexcolor (0.0.1):
@@ -18,7 +16,6 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
-  - flutter_keyboard_visibility (from `.symlinks/plugins/flutter_keyboard_visibility/ios`)
   - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
   - hexcolor (from `.symlinks/plugins/hexcolor/ios`)
   - image_picker_saver (from `.symlinks/plugins/image_picker_saver/ios`)
@@ -30,8 +27,6 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_inappwebview:
     :path: ".symlinks/plugins/flutter_inappwebview/ios"
-  flutter_keyboard_visibility:
-    :path: ".symlinks/plugins/flutter_keyboard_visibility/ios"
   flutter_webview_plugin:
     :path: ".symlinks/plugins/flutter_webview_plugin/ios"
   hexcolor:
@@ -46,7 +41,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_inappwebview: 69dfbac46157b336ffbec19ca6dfd4638c7bf189
-  flutter_keyboard_visibility: 6195387fb6d8f46e5cd6dda4a4154e41f800f545
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
   hexcolor: fdfb9c4258ad96e949c2dbcdf790a62194b8aa89
   image_picker_saver: 4f28bd70e1efdca68ad88beab0f11d22cffe04f6

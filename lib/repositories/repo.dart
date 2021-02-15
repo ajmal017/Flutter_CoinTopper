@@ -1,16 +1,16 @@
 import 'package:cointopper/api/api_client.dart';
-import 'package:cointopper/models/allHistoryApi_response_model.dart';
-import 'package:cointopper/models/coinList_response_model.dart';
-import 'package:cointopper/models/coindetail_response_model.dart';
-import 'package:cointopper/models/currencyList_response_model.dart';
-import 'package:cointopper/models/featuredNewsList_response_model.dart';
-import 'package:cointopper/models/globalDataCoin_response_model.dart';
-import 'package:cointopper/models/newsDetails_response_model.dart';
-import 'package:cointopper/models/newsList_response_model.dart';
-import 'package:cointopper/models/searchCoin_response_model.dart';
-import 'package:cointopper/models/searchNews_response_model.dart';
-import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
-import 'package:cointopper/models/weekDayHistoryApi_response_model.dart';
+import 'package:cointopper/models/all_history_api_response_model.dart';
+import 'package:cointopper/models/coin_detail_response_model.dart';
+import 'package:cointopper/models/coin_list_response_model.dart';
+import 'package:cointopper/models/currency_list_response_model.dart';
+import 'package:cointopper/models/featured_news_list_response_model.dart';
+import 'package:cointopper/models/global_data_coin_response_model.dart';
+import 'package:cointopper/models/news_details_response_model.dart';
+import 'package:cointopper/models/news_list_response_model.dart';
+import 'package:cointopper/models/search_coin_response_model.dart';
+import 'package:cointopper/models/search_news_response_model.dart';
+import 'package:cointopper/models/top_viewed_coin_list_response_Model.dart';
+import 'package:cointopper/models/week_day_history_api_response_model.dart';
 
 class CoinTopperRepository {
   ApiClient apiClient;
@@ -36,7 +36,8 @@ class CoinTopperRepository {
   }
 
   // Coin List Repo.
-  Stream<List<CoinListResponseModel>> loadCoinList(String currencyCode, int offset, int limit) async* {
+  Stream<List<CoinListResponseModel>> loadCoinList(
+      String currencyCode, int offset, int limit) async* {
     yield* apiClient.fetchCoinList(currencyCode, offset, limit);
   }
 

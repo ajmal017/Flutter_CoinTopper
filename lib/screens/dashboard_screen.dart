@@ -1,10 +1,10 @@
-import 'package:cointopper/bloc/currencyListBloc/currencyList_bloc.dart';
-import 'package:cointopper/bloc/currencyListBloc/currencyList_state.dart';
-import 'package:cointopper/bloc/dashboardBloc/dashboard_bloc.dart';
-import 'package:cointopper/bloc/dashboardBloc/dashboard_state.dart';
-import 'package:cointopper/screens/searchCoinList_screen.dart';
-import 'package:cointopper/widget/coinCard_widget.dart';
-import 'package:cointopper/widget/coinList_widget.dart';
+import 'package:cointopper/bloc/currency_list_bloc/currency_list_bloc.dart';
+import 'package:cointopper/bloc/currency_list_bloc/currency_list_state.dart';
+import 'package:cointopper/bloc/dashboard_bloc/dashboard_bloc.dart';
+import 'package:cointopper/bloc/dashboard_bloc/dashboard_state.dart';
+import 'package:cointopper/screens/search_coin_list_screen.dart';
+import 'package:cointopper/widget/coin_card_widget.dart';
+import 'package:cointopper/widget/coin_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';

@@ -1,29 +1,29 @@
 import 'dart:convert';
 
-import 'package:cointopper/entities/allHistoryApi_entity.dart';
-import 'package:cointopper/entities/coinDetail_entity.dart';
-import 'package:cointopper/entities/coinList_entity.dart';
-import 'package:cointopper/entities/currencyList_entity.dart';
-import 'package:cointopper/entities/featuredNewsList_entity.dart';
-import 'package:cointopper/entities/globalDataCoin_data_entity.dart';
-import 'package:cointopper/entities/newsDetails_entity.dart';
-import 'package:cointopper/entities/newsList_entity.dart';
-import 'package:cointopper/entities/searchCoin_entity.dart';
-import 'package:cointopper/entities/searchNews_entity.dart';
-import 'package:cointopper/entities/topViewedCoinList_data_entity.dart';
-import 'package:cointopper/entities/weekDayHistoryApi_entity.dart';
-import 'package:cointopper/models/allHistoryApi_response_model.dart';
-import 'package:cointopper/models/coinList_response_model.dart';
-import 'package:cointopper/models/coindetail_response_model.dart';
-import 'package:cointopper/models/currencyList_response_model.dart';
-import 'package:cointopper/models/featuredNewsList_response_model.dart';
-import 'package:cointopper/models/globalDataCoin_response_model.dart';
-import 'package:cointopper/models/newsDetails_response_model.dart';
-import 'package:cointopper/models/newsList_response_model.dart';
-import 'package:cointopper/models/searchCoin_response_model.dart';
-import 'package:cointopper/models/searchNews_response_model.dart';
-import 'package:cointopper/models/topViewedCoinList_response_Model.dart';
-import 'package:cointopper/models/weekDayHistoryApi_response_model.dart';
+import 'package:cointopper/entities/all_history_api_entity.dart';
+import 'package:cointopper/entities/coin_detail_entity.dart';
+import 'package:cointopper/entities/coin_list_entity.dart';
+import 'package:cointopper/entities/currency_list_entity.dart';
+import 'package:cointopper/entities/featured_news_list_entity.dart';
+import 'package:cointopper/entities/global_data_coin_data_entity.dart';
+import 'package:cointopper/entities/news_details_entity.dart';
+import 'package:cointopper/entities/news_list_entity.dart';
+import 'package:cointopper/entities/search_coin_entity.dart';
+import 'package:cointopper/entities/search_news_entity.dart';
+import 'package:cointopper/entities/top_viewed_coin%20list_data_entity.dart';
+import 'package:cointopper/entities/week_day_history_api_entity.dart';
+import 'package:cointopper/models/all_history_api_response_model.dart';
+import 'package:cointopper/models/coin_detail_response_model.dart';
+import 'package:cointopper/models/coin_list_response_model.dart';
+import 'package:cointopper/models/currency_list_response_model.dart';
+import 'package:cointopper/models/featured_news_list_response_model.dart';
+import 'package:cointopper/models/global_data_coin_response_model.dart';
+import 'package:cointopper/models/news_details_response_model.dart';
+import 'package:cointopper/models/news_list_response_model.dart';
+import 'package:cointopper/models/search_coin_response_model.dart';
+import 'package:cointopper/models/search_news_response_model.dart';
+import 'package:cointopper/models/top_viewed_coin_list_response_Model.dart';
+import 'package:cointopper/models/week_day_history_api_response_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiClient {
@@ -93,10 +93,6 @@ class ApiClient {
   // Coin List API.
   Stream<List<CoinListResponseModel>> fetchCoinList(
       String currencyCode, int offset, int limit) async* {
-    print('coin list api ==>>');
-    print('Limit ==>> $limit');
-    print('currencyCode ==>> $currencyCode');
-    print('offset ==>> $offset');
     final response = await httpClient.get(
       Uri.encodeFull(
           '${this.baseUrl + "ticker?offset=$offset&limit=$limit&currency=$currencyCode"}'),
@@ -247,8 +243,9 @@ class ApiClient {
     var results = map["data"];
     convertInArray.add(results);
     yield convertInArray
-        .map<NewsDetailsResponseModel>((dynamic item) => NewsDetailsResponseModel.fromEntity(
-            NewsDetailsEntity.fromJson(item as Map<String, dynamic>)))
+        .map<NewsDetailsResponseModel>((dynamic item) =>
+            NewsDetailsResponseModel.fromEntity(
+                NewsDetailsEntity.fromJson(item as Map<String, dynamic>)))
         .toList();
   }
 }

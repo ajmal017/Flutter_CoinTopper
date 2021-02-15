@@ -1,8 +1,8 @@
-import 'package:cointopper/models/featuredNewsList_response_model.dart';
+import 'package:cointopper/models/featured_news_list_response_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class FeaturedNewsState extends Equatable {
-  const  FeaturedNewsState();
+  const FeaturedNewsState();
 
   @override
   List<Object> get props => [];

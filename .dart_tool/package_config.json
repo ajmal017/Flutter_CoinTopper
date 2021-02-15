@@ -122,12 +122,6 @@
       "languageVersion": "2.7"
     },
     {
-      "name": "flutter_keyboard_visibility",
-      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_keyboard_visibility-0.7.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.2"
-    },
-    {
       "name": "flutter_test",
       "rootUri": "file:///Users/codecrunch/Developer/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -254,10 +248,10 @@
       "languageVersion": "2.7"
     },
     {
-      "name": "search_widget",
-      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/search_widget-1.0.2",
+      "name": "readmore",
+      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/readmore-1.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.2"
+      "languageVersion": "2.1"
     },
     {
       "name": "sky_engine",
@@ -282,12 +276,6 @@
       "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0-nullsafety.1",
       "packageUri": "lib/",
       "languageVersion": "2.10"
-    },
-    {
-      "name": "sticky_headers",
-      "rootUri": "file:///Users/codecrunch/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/sticky_headers-0.1.8+1",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
     },
     {
       "name": "stream_channel",
@@ -386,7 +374,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-01-30T14:47:21.356924Z",
+  "generated": "2021-02-03T14:41:04.661170Z",
   "generator": "pub",
   "generatorVersion": "2.10.5"
 }

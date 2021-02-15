@@ -1,4 +1,4 @@
-import 'package:cointopper/models/searchNews_response_model.dart';
+import 'package:cointopper/models/search_news_response_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class NewsSearchEvent extends Equatable {

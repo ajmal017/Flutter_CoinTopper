@@ -1,4 +1,4 @@
-import 'package:cointopper/models/newsDetails_response_model.dart';
+import 'package:cointopper/models/news_details_response_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class NewsDetailsEvent extends Equatable {

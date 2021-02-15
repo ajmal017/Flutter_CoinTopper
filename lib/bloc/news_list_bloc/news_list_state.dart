@@ -1,4 +1,4 @@
-import 'package:cointopper/models/newsList_response_model.dart';
+import 'package:cointopper/models/news_list_response_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class NewsListState extends Equatable {
